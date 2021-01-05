@@ -1,4 +1,4 @@
-package com.pix;
+package com.pix.main;
 
 public class Main {
 
