@@ -1,7 +1,6 @@
-package com.pix.main.models.repositories.impl;
+package com.pix.main.data.repositories;
 
-import com.pix.main.models.Agency;
-import com.pix.main.models.repositories.AgencyRepository;
+import com.pix.main.domain.repositories.AgencyRepository;
 
 public class AgencyRepositoryImplementation implements AgencyRepository {
 

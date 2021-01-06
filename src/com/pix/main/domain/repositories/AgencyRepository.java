@@ -1,6 +1,4 @@
-package com.pix.main.models.repositories;
-
-import com.pix.main.models.Agency;
+package com.pix.main.domain.repositories;
 
 public interface AgencyRepository {
 

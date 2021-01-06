@@ -1,21 +1,16 @@
-package com.pix.main.models;
+package com.pix.main.domain.models;
 
 public class Agency {
 
-    private Integer id;
+    private String id;
 
     private String name;
 
-    public Agency(Integer _id, String _name) {
-        this.id = _id;
-        this.name = _name;
-    }
-
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -1,4 +1,4 @@
-package com.pix.main.models.repositories;
+package com.pix.main.domain.repositories;
 
 public interface StatementRepository {
 
