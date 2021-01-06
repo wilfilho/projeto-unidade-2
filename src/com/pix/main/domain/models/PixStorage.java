@@ -1,17 +1,26 @@
 package com.pix.main.domain.models;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class PixStorage {
 
-    private List<Bank> banks;
+    private ArrayList<Bank> banks;
 
-    public List<Bank> getBanks() {
+    private ArrayList<Statement> statements;
+
+    public ArrayList<Bank> getBanks() {
         return banks;
     }
 
-    public void setBanks(List<Bank> banks) {
+    public void setBanks(ArrayList<Bank> banks) {
         this.banks = banks;
     }
 
+    public ArrayList<Statement> getStatements() {
+        return statements;
+    }
+
+    public void setStatements(ArrayList<Statement> statements) {
+        this.statements = statements;
+    }
 }

@@ -23,19 +23,19 @@
     {
       "idCliente": "061.462.122-22",
       "nome": "José Wilson",
-      "chavesPix": [
-        {
-          "idChave": "123113"
-        },
-        {
-          "idChave": "123113"
-        }
-      ],
       "contas": [
         {
           "idConta": "13213",
           "idAgencia": "235",
-          "saldo": 123.43
+          "saldo": 123.43,
+          "chavesPix": [
+            {
+              "idChave": "123113"
+            },
+            {
+              "idChave": "123113"
+            }
+          ]
         }
       ]
     }
