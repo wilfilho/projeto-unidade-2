@@ -2,13 +2,14 @@ package com.pix.main.domain.models;
 
 import java.util.List;
 
-public class Bank {
+public class BankClient {
 
     private String id;
 
     private String name;
 
-    private List<Agency> agencies;
+    private List<Account> accounts;
+
 
     public String getId() {
         return id;
@@ -26,12 +27,11 @@ public class Bank {
         this.name = name;
     }
 
-    public List<Agency> getAgencies() {
-        return agencies;
+    public List<Account> getAccounts() {
+        return accounts;
     }
 
-    public void setAgencies(List<Agency> agencies) {
-        this.agencies = agencies;
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
     }
-
 }
