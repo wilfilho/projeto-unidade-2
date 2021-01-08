@@ -1,9 +1,11 @@
 package com.pix.main.domain.repositories;
 
+import com.pix.main.domain.models.BankClient;
+
 public interface ClientRepository {
 
-    // void addClient(Client client)
+     void addClient(BankClient client);
 
-    // void removeClient(Integer clientId)
+     void removeClient(Integer clientId);
 
 }
