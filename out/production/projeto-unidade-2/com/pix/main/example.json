@@ -1,0 +1,55 @@
+{
+  "bancos": [
+    {
+      "id": "047",
+      "nome": "Banese",
+      "agencias": [
+        {
+          "id": "235",
+          "nome": "Agencia Banese 04"
+        },
+        {
+          "id": "235",
+          "nome": "Agencia Banese 04"
+        },
+        {
+          "id": "235",
+          "nome": "Agencia Banese 04"
+        }
+      ]
+    }
+  ],
+  "clientes": [
+    {
+      "idCliente": "061.462.122-22",
+      "nome": "José Wilson",
+      "contas": [
+        {
+          "idConta": "13213",
+          "idAgencia": "235",
+          "saldo": 123.43,
+          "chavesPix": [
+            {
+              "idChave": "123113"
+            },
+            {
+              "idChave": "123113"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "extratos": [
+    {
+      "idContaRecebedor": "123123",
+      "idContaEnvia": "54323",
+      "valorEnviado": 342.21
+    },
+    {
+      "idContaRecebedor": "123123",
+      "idContaEnvia": "54323",
+      "valorEnviado": 342.21
+    }
+  ]
+}
