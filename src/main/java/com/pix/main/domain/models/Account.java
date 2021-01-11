@@ -1,14 +1,21 @@
 package com.pix.main.domain.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Account {
+
+    @SerializedName("idConta")
     private String accountId;
 
+    @SerializedName("idAgencia")
     private String agencyId;
 
+    @SerializedName("saldo")
     private String balance;
 
+    @SerializedName("chavesPix")
     private List<PixKey> pixKeys;
 
     public String getAccountId() {
