@@ -1,11 +1,15 @@
 package com.pix.main.domain.models;
 
-public class Statement {
+import com.google.gson.annotations.SerializedName;
 
+public class Statement {
+    @SerializedName("idContaRecebedor")
     private String idAccountReceiver;
 
+    @SerializedName("idContaEnvia")
     private String idAccountSender;
 
+    @SerializedName("valorEnviado")
     private Float value;
 
     public String getIdAccountReceiver() {
