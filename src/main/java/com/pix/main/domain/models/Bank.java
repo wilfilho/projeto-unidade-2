@@ -1,14 +1,19 @@
 package com.pix.main.domain.models;
 
-import java.util.ArrayList;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Bank {
 
+    @SerializedName("id")
     private String id;
 
+    @SerializedName("nome")
     private String name;
 
-    private ArrayList<Agency> agencies;
+    @SerializedName("agencias")
+    private List<Agency> agencies;
 
     public String getId() {
         return id;
@@ -26,11 +31,11 @@ public class Bank {
         this.name = name;
     }
 
-    public ArrayList<Agency> getAgencies() {
+    public List<Agency> getAgencies() {
         return agencies;
     }
 
-    public void setAgencies(ArrayList<Agency> agencies) {
+    public void setAgencies(List<Agency> agencies) {
         this.agencies = agencies;
     }
 
