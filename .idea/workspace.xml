@@ -11,23 +11,12 @@
       </path>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feat" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feat" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select />
@@ -35,25 +24,15 @@
   <component name="ChangeListManager">
     <list default="true" id="82696a19-f1cb-4b3b-9e38-c89ad37a1aef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/data/EmptyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/EmptyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Agency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/BankClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/PixKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/PixStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Statement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/AgencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AgencyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/BankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/PixKeyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/PixKeyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/StatementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/StatementRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/example.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/presentation/EmptyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/EmptyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Agency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Statement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,15 +72,15 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories" />
       <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data" />
       <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models" />
       <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/presentation" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
     </key>
   </component>
   <component name="RunManager">
@@ -156,5 +135,21 @@
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="444" y="124" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1440.810@0.23.1440.810" timestamp="1610324182346" />
+    <state width="1398" height="443" key="GridCell.Tab.0.bottom" timestamp="1610327083059">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="443" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1610327083059" />
+    <state width="1398" height="443" key="GridCell.Tab.0.center" timestamp="1610327083057">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="443" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1610327083057" />
+    <state width="1398" height="443" key="GridCell.Tab.0.left" timestamp="1610327083056">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="443" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1610327083056" />
+    <state width="1398" height="443" key="GridCell.Tab.0.right" timestamp="1610327083058">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="443" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1610327083058" />
   </component>
 </project>
