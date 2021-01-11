@@ -23,10 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82696a19-f1cb-4b3b-9e38-c89ad37a1aef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/retriever/JsonPixStorageRetriever.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/retriever/PixStorageRetriever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AccountRepositoryImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AgencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AgencyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,34 +126,75 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1610406513402">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="533" y="151" key="#com.intellij.ide.util.MemberChooser" timestamp="1610408116063">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
+    <state x="533" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408116063" />
     <state x="533" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1610324755861" />
     <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/-622.-1057.2560.990@0.23.1440.877" timestamp="1610406513402" />
     <state x="444" y="124" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1610324182346">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="444" y="124" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1440.810@0.23.1440.810" timestamp="1610324182346" />
-    <state width="1398" height="443" key="GridCell.Tab.0.bottom" timestamp="1610406754011">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="483" y="138" key="#xdebugger.evaluate" timestamp="1610408881665">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
+    <state x="483" y="138" key="#xdebugger.evaluate/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408881665" />
+    <state width="1398" height="247" key="GridCell.Tab.0.bottom" timestamp="1610408890135">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="247" key="GridCell.Tab.0.bottom/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890135" />
     <state width="1398" height="443" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1610327108241" />
     <state width="1398" height="443" key="GridCell.Tab.0.bottom/0.23.1440.877/-622.-1057.2560.990@0.23.1440.877" timestamp="1610406754011" />
-    <state width="1398" height="443" key="GridCell.Tab.0.center" timestamp="1610406754010">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="247" key="GridCell.Tab.0.center" timestamp="1610408890134">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
+    <state width="1398" height="247" key="GridCell.Tab.0.center/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890134" />
     <state width="1398" height="443" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1610327108240" />
     <state width="1398" height="443" key="GridCell.Tab.0.center/0.23.1440.877/-622.-1057.2560.990@0.23.1440.877" timestamp="1610406754010" />
-    <state width="1398" height="443" key="GridCell.Tab.0.left" timestamp="1610406754010">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="247" key="GridCell.Tab.0.left" timestamp="1610408890133">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
+    <state width="1398" height="247" key="GridCell.Tab.0.left/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890133" />
     <state width="1398" height="443" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1610327108239" />
     <state width="1398" height="443" key="GridCell.Tab.0.left/0.23.1440.877/-622.-1057.2560.990@0.23.1440.877" timestamp="1610406754010" />
-    <state width="1398" height="443" key="GridCell.Tab.0.right" timestamp="1610406754011">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="247" key="GridCell.Tab.0.right" timestamp="1610408890134">
+      <screen x="0" y="23" width="1440" height="810" />
     </state>
+    <state width="1398" height="247" key="GridCell.Tab.0.right/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890134" />
     <state width="1398" height="443" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1610327108240" />
     <state width="1398" height="443" key="GridCell.Tab.0.right/0.23.1440.877/-622.-1057.2560.990@0.23.1440.877" timestamp="1610406754011" />
+    <state width="1398" height="247" key="GridCell.Tab.1.bottom" timestamp="1610408890136">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="247" key="GridCell.Tab.1.bottom/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890136" />
+    <state width="1398" height="247" key="GridCell.Tab.1.center" timestamp="1610408890136">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="247" key="GridCell.Tab.1.center/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890136" />
+    <state width="1398" height="247" key="GridCell.Tab.1.left" timestamp="1610408890135">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="247" key="GridCell.Tab.1.left/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890135" />
+    <state width="1398" height="247" key="GridCell.Tab.1.right" timestamp="1610408890136">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1398" height="247" key="GridCell.Tab.1.right/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1610408890136" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AgencyRepositoryImplementation.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AgencyRepositoryImplementation.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

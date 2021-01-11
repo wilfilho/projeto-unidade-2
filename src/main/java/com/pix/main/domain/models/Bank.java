@@ -1,6 +1,6 @@
 package com.pix.main.domain.models;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Bank {
 
@@ -8,7 +8,7 @@ public class Bank {
 
     private String name;
 
-    private List<Agency> agencies;
+    private ArrayList<Agency> agencies;
 
     public String getId() {
         return id;
@@ -26,11 +26,11 @@ public class Bank {
         this.name = name;
     }
 
-    public List<Agency> getAgencies() {
+    public ArrayList<Agency> getAgencies() {
         return agencies;
     }
 
-    public void setAgencies(List<Agency> agencies) {
+    public void setAgencies(ArrayList<Agency> agencies) {
         this.agencies = agencies;
     }
 
