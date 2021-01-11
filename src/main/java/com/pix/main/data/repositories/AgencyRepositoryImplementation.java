@@ -5,14 +5,10 @@ import com.pix.main.domain.repositories.AgencyRepository;
 
 public class AgencyRepositoryImplementation implements AgencyRepository {
 
-    @Override
     public void addAgency(Agency agency) {
-
     }
 
-    @Override
     public void removeAgency(Integer id) {
-
     }
 
 }

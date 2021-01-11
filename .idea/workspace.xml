@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feat" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feat" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="82696a19-f1cb-4b3b-9e38-c89ad37a1aef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pix/main/domain/models/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pix/main/domain/models/BankClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pix/main/domain/models/PixKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pix/main/domain/models/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/AgencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/AgencyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/data/EmptyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/EmptyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Agency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/BankClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/PixKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/PixStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/models/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Statement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/AgencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AgencyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/BankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/PixKeyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/PixKeyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/domain/repositories/StatementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/StatementRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/example.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pix/main/presentation/EmptyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/EmptyView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +69,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1miWIJMeVM5pRChjKNe5g0bxeoQ" />
   <component name="ProjectViewState">
@@ -43,6 +93,13 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/presentation" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libs" />
     </key>
@@ -89,5 +146,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="533" y="151" key="#com.intellij.ide.util.MemberChooser" timestamp="1610324755861">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="533" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1610324755861" />
+    <state x="444" y="124" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1610324182346">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="444" y="124" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1440.810@0.23.1440.810" timestamp="1610324182346" />
   </component>
 </project>
