@@ -23,6 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82696a19-f1cb-4b3b-9e38-c89ad37a1aef" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AccountRepositoryImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/Main.java" afterDir="false" />
@@ -31,6 +32,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AccountRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AgencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AgencyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example.json" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/StatementRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +52,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1miWIJMeVM5pRChjKNe5g0bxeoQ" />
   <component name="ProjectViewState">
@@ -125,6 +123,7 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="WindowStateProjectService">
     <state x="533" y="151" key="#com.intellij.ide.util.MemberChooser" timestamp="1610408116063">
       <screen x="0" y="23" width="1440" height="810" />
@@ -197,4 +196,6 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+=======
+>>>>>>> Stashed changes
 </project>
