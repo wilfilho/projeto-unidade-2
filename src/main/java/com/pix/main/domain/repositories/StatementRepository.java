@@ -1,9 +1,14 @@
 package com.pix.main.domain.repositories;
 
+import com.pix.main.domain.models.Statement;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 public interface StatementRepository {
 
-     void fetchStatementsByAgency(Integer agencyId);
+     ArrayList<Statement> fetchStatementsByAgency(String agencyId, String bankId) throws IOException;
 
-     void fetchStatementsByClient(Integer clientId);
+     ArrayList<Statement> fetchStatementsByClient(String clientId);
 
 }

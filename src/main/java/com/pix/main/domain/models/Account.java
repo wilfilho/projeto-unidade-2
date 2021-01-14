@@ -2,6 +2,7 @@ package com.pix.main.domain.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
@@ -16,7 +17,7 @@ public class Account {
     private String balance;
 
     @SerializedName("chavesPix")
-    private List<PixKey> pixKeys;
+    private ArrayList<PixKey> pixKeys;
 
     public String getAccountId() {
         return accountId;
@@ -42,11 +43,11 @@ public class Account {
         this.balance = balance;
     }
 
-    public List<PixKey> getPixKeys() {
+    public ArrayList<PixKey> getPixKeys() {
         return pixKeys;
     }
 
-    public void setPixKeys(List<PixKey> pixKeys) {
+    public void setPixKeys(ArrayList<PixKey> pixKeys) {
         this.pixKeys = pixKeys;
     }
 }

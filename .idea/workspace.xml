@@ -31,6 +31,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/ClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example.json" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/StatementRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,4 +154,6 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+=======
+>>>>>>> Stashed changes
 </project>
