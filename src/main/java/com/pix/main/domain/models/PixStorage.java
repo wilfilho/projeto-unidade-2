@@ -30,4 +30,12 @@ public class PixStorage {
     public void setStatements(ArrayList<Statement> statements) {
         this.statements = statements;
     }
+
+    public ArrayList<BankClient> getClients() {
+        return clients;
+    }
+
+    public void setClients(ArrayList<BankClient> clients) {
+        this.clients = clients;
+    }
 }
