@@ -112,8 +112,4 @@ public class AccountRepositoryImplementation implements AccountRepository {
         throw new AccountNotFoundException();
     }
 
-    @Override
-    public void addTransfer(Statement statement) {
-    }
-
 }

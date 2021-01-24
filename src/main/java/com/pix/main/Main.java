@@ -32,7 +32,9 @@ public class Main {
 
 //        showBankTotalCash(pixStorageManager);
 
-        showClientAccountBalanceDefault(pixStorageManager);
+//        showClientAccountBalanceDefault(pixStorageManager);
+
+        addTransaction(pixStorageManager);
     }
 
     private static void addBankDefault(PixStorageManager manager) throws BankAlreadyExistsException, IOException {
@@ -59,8 +61,8 @@ public class Main {
         ClientRepository clientRepository = new ClientRepositoryImplementation(manager);
 
         BankClient firstClient = new BankClient();
-        firstClient.setId("87840207090");
-        firstClient.setName("Mario Jose Silva");
+        firstClient.setId("20669806099");
+        firstClient.setName("Julia Maria Silva");
 
         clientRepository.addClient(firstClient);
     }
@@ -69,8 +71,8 @@ public class Main {
         AccountRepository accountRepository = new AccountRepositoryImplementation(manager);
 
         Account firstAccount = new Account();
-        firstAccount.setAccountId("1233");
-        firstAccount.setClientId("87840207090");
+        firstAccount.setAccountId("3333");
+        firstAccount.setClientId("20669806099");
         firstAccount.setAccountType("CORRENTE");
         firstAccount.setAgencyId("0001");
         firstAccount.setBankId("260");
@@ -109,6 +111,7 @@ public class Main {
 
         System.out.println(currentCash);
     }
+
     private static void addPixKeyDefault(PixStorageManager manager) throws IOException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
         PixKeyRepository pixKeyRepository = new PixKeyRepositoryImplementation(manager);
 
@@ -116,6 +119,17 @@ public class Main {
         pixKey.setKeyId("79999448877");
 
         pixKeyRepository.addPixKey(pixKey, "1233", "87840207090");
+    }
+
+    private static void addTransaction(PixStorageManager manager) throws IOException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException, AccountNotFoundException {
+        BankStatementRepository bankStatementRepository = new BankStatementRepositoryImplementation(manager);
+
+        BankStatement bankStatement = new BankStatement();
+        bankStatement.setAccountTransactionId("3333");
+        bankStatement.setBankTransactionId("260");
+        bankStatement.setValue(new BigDecimal(50));
+
+        bankStatementRepository.addTransfer(bankStatement, "1233", "260");
     }
 
 }

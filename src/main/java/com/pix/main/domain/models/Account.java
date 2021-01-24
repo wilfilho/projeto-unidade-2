@@ -26,7 +26,10 @@ public class Account {
     private String clientId;
 
     @SerializedName("chavesPix")
-    private ArrayList<PixKey> pixKeys;
+    private ArrayList<PixKey> pixKeys = new ArrayList<>();
+
+    @SerializedName("extratoBancario")
+    private ArrayList<BankStatement> bankStatements = new ArrayList<>();
 
     public String getAccountId() {
         return accountId;
@@ -82,5 +85,13 @@ public class Account {
 
     public void setBankId(String bankId) {
         this.bankId = bankId;
+    }
+
+    public ArrayList<BankStatement> getBankStatements() {
+        return bankStatements;
+    }
+
+    public void setBankStatements(ArrayList<BankStatement> bankStatements) {
+        this.bankStatements = bankStatements;
     }
 }
