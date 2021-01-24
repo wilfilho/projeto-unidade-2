@@ -1,21 +1,12 @@
 package com.pix.main;
 
 import com.google.gson.Gson;
-import com.pix.main.data.repositories.AccountRepositoryImplementation;
-import com.pix.main.data.repositories.AgencyRepositoryImplementation;
-import com.pix.main.data.repositories.BankRepositoryImplementation;
-import com.pix.main.data.repositories.ClientRepositoryImplementation;
+import com.pix.main.data.repositories.*;
 import com.pix.main.data.retriever.JsonPixStorageManager;
 import com.pix.main.data.retriever.PixStorageManager;
 import com.pix.main.domain.errors.*;
-import com.pix.main.domain.models.Account;
-import com.pix.main.domain.models.Agency;
-import com.pix.main.domain.models.Bank;
-import com.pix.main.domain.models.BankClient;
-import com.pix.main.domain.repositories.AccountRepository;
-import com.pix.main.domain.repositories.AgencyRepository;
-import com.pix.main.domain.repositories.BankRepository;
-import com.pix.main.domain.repositories.ClientRepository;
+import com.pix.main.domain.models.*;
+import com.pix.main.domain.repositories.*;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -23,14 +14,16 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException {
+    public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
 
 //        addAgencyDefault(pixStorageManager);
 
 //        addClientDefault(pixStorageManager);
 
-        addClientAccountDefault(pixStorageManager);
+//        addClientAccountDefault(pixStorageManager);
+
+        addPixKeyDefault(pixStorageManager);
     }
 
     private static void addBankDefault(PixStorageManager manager) throws BankAlreadyExistsException, IOException {
@@ -76,6 +69,15 @@ public class Main {
         firstAccount.setPixKeys(new ArrayList<>());
 
         accountRepository.addAccount(firstAccount);
+    }
+
+    private static void addPixKeyDefault(PixStorageManager manager) throws IOException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
+        PixKeyRepository pixKeyRepository = new PixKeyRepositoryImplementation(manager);
+
+        PixKey pixKey = new PixKey();
+        pixKey.setKeyId("79999448877");
+
+        pixKeyRepository.addPixKey(pixKey, "1233", "87840207090");
     }
 
 }

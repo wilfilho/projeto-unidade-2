@@ -1,6 +1,8 @@
 package com.pix.main.data.repositories;
 
 import com.pix.main.data.retriever.PixStorageManager;
+import com.pix.main.domain.errors.PixKeyAlreadyExistsException;
+import com.pix.main.domain.errors.PixKeyNotAddedException;
 import com.pix.main.domain.models.Account;
 import com.pix.main.domain.models.BankClient;
 import com.pix.main.domain.models.PixKey;
@@ -18,15 +20,33 @@ public class PixKeyRepositoryImplementation implements PixKeyRepository {
     }
 
     @Override
-    public void addPixKey(PixKey pixKey, String accountId) throws IOException {
+    public void addPixKey(PixKey pixKey, String accountId, String clientId) throws IOException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
         PixStorage pixStorage = storageManager.retrievePixStorage();
+
         for(BankClient bankClient : pixStorage.getClients()) {
-            for(Account account : bankClient.getAccounts()) {
-                if (account.getAccountId().equals(accountId)) {
-                    account.getPixKeys().add(pixKey);
+            for (Account account : bankClient.getAccounts()) {
+                for (PixKey pixKeyItem : account.getPixKeys()) {
+                    if (pixKeyItem.getKeyId().equalsIgnoreCase(pixKey.getKeyId())) {
+                        throw new PixKeyAlreadyExistsException();
+                    }
                 }
             }
         }
+
+        boolean pixKeyAdded = false;
+        for(BankClient bankClient : pixStorage.getClients()) {
+            for(Account account : bankClient.getAccounts()) {
+                if (account.getAccountId().equals(accountId) && bankClient.getId().equalsIgnoreCase(clientId)) {
+                    account.getPixKeys().add(pixKey);
+                    pixKeyAdded = true;
+                }
+            }
+        }
+
+        if (!pixKeyAdded) {
+            throw new PixKeyNotAddedException();
+        }
+
         storageManager.savePixStorage(pixStorage);
     }
 
