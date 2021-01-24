@@ -25,7 +25,11 @@ public class Main {
 
 //        addPixKeyDefault(pixStorageManager);
 
-        addClientAccountBalanceDefault(pixStorageManager);
+//        addClientAccountBalanceDefault(pixStorageManager);
+
+//        showAgencyTotalCash(pixStorageManager);
+
+        showBankTotalCash(pixStorageManager);
     }
 
     private static void addBankDefault(PixStorageManager manager) throws BankAlreadyExistsException, IOException {
@@ -77,6 +81,22 @@ public class Main {
         AccountRepository accountRepository = new AccountRepositoryImplementation(manager);
 
         accountRepository.updateBalance(new BigDecimal(100), "1233", "8784020709");
+    }
+
+    private static void showAgencyTotalCash(PixStorageManager manager) throws IOException {
+        AgencyRepository agencyRepository = new AgencyRepositoryImplementation(manager);
+
+        BigDecimal totalAgencyCash = agencyRepository.getAgencyTotalCash("260", "0001");
+
+        System.out.println(totalAgencyCash);
+    }
+
+    private static void showBankTotalCash(PixStorageManager manager) throws IOException {
+        BankRepository bankRepository = new BankRepositoryImplementation(manager);
+
+        BigDecimal totalBankCash = bankRepository.getBankTotalCash("260");
+
+        System.out.println(totalBankCash);
     }
 
     private static void addPixKeyDefault(PixStorageManager manager) throws IOException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
