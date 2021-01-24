@@ -2,8 +2,8 @@ package com.pix.main.domain.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Account {
 
@@ -13,8 +13,17 @@ public class Account {
     @SerializedName("idAgencia")
     private String agencyId;
 
+    @SerializedName("idBanco")
+    private String bankId;
+
     @SerializedName("saldo")
-    private String balance;
+    private BigDecimal balance;
+
+    @SerializedName("tipo")
+    private String accountType;
+
+    @SerializedName("idClient")
+    private String clientId;
 
     @SerializedName("chavesPix")
     private ArrayList<PixKey> pixKeys;
@@ -35,11 +44,11 @@ public class Account {
         this.agencyId = agencyId;
     }
 
-    public String getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(String balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 
@@ -49,5 +58,29 @@ public class Account {
 
     public void setPixKeys(ArrayList<PixKey> pixKeys) {
         this.pixKeys = pixKeys;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getBankId() {
+        return bankId;
+    }
+
+    public void setBankId(String bankId) {
+        this.bankId = bankId;
     }
 }

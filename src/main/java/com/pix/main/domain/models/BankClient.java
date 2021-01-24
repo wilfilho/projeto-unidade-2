@@ -13,7 +13,7 @@ public class BankClient {
     private String name;
 
     @SerializedName("contas")
-    private ArrayList<Account> accounts;
+    private ArrayList<Account> accounts = new ArrayList<>();
     
     public String getId() {
         return id;
