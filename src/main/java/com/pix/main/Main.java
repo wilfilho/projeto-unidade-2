@@ -8,13 +8,14 @@ import com.pix.main.domain.errors.*;
 import com.pix.main.domain.models.*;
 import com.pix.main.domain.repositories.*;
 
+import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException, AccountBalanceNotUpdatedException {
+    public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException, AccountBalanceNotUpdatedException, AccountNotFoundException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
 
 //        addAgencyDefault(pixStorageManager);
@@ -29,7 +30,9 @@ public class Main {
 
 //        showAgencyTotalCash(pixStorageManager);
 
-        showBankTotalCash(pixStorageManager);
+//        showBankTotalCash(pixStorageManager);
+
+        showClientAccountBalanceDefault(pixStorageManager);
     }
 
     private static void addBankDefault(PixStorageManager manager) throws BankAlreadyExistsException, IOException {
@@ -80,7 +83,7 @@ public class Main {
     private static void addClientAccountBalanceDefault(PixStorageManager manager) throws IOException, AccountBalanceNotUpdatedException {
         AccountRepository accountRepository = new AccountRepositoryImplementation(manager);
 
-        accountRepository.updateBalance(new BigDecimal(100), "1233", "8784020709");
+        accountRepository.updateCash(new BigDecimal(100), "1233", "87840207090");
     }
 
     private static void showAgencyTotalCash(PixStorageManager manager) throws IOException {
@@ -99,6 +102,13 @@ public class Main {
         System.out.println(totalBankCash);
     }
 
+    private static void showClientAccountBalanceDefault(PixStorageManager manager) throws IOException, AccountBalanceNotUpdatedException, AccountNotFoundException {
+        AccountRepository accountRepository = new AccountRepositoryImplementation(manager);
+
+        BigDecimal currentCash = accountRepository.getTotalCash("1233", "87840207090");
+
+        System.out.println(currentCash);
+    }
     private static void addPixKeyDefault(PixStorageManager manager) throws IOException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
         PixKeyRepository pixKeyRepository = new PixKeyRepositoryImplementation(manager);
 

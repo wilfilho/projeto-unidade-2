@@ -8,6 +8,7 @@ import com.pix.main.domain.errors.ClientNotFoundException;
 import com.pix.main.domain.models.*;
 import com.pix.main.domain.repositories.AccountRepository;
 
+import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
@@ -69,7 +70,7 @@ public class AccountRepositoryImplementation implements AccountRepository {
     }
 
     @Override
-    public void updateBalance(BigDecimal valueToAdd, String accountId, String clientId) throws IOException, AccountBalanceNotUpdatedException {
+    public void updateCash(BigDecimal valueToAdd, String accountId, String clientId) throws IOException, AccountBalanceNotUpdatedException {
         PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
         List<BankClient> clients = pixStorageRetriever.getClients();
 
@@ -91,6 +92,24 @@ public class AccountRepositoryImplementation implements AccountRepository {
         }
 
         storageManager.savePixStorage(pixStorageRetriever);
+    }
+
+    @Override
+    public BigDecimal getTotalCash(String accountId, String clientId) throws IOException, AccountNotFoundException {
+        PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
+        List<BankClient> clients = pixStorageRetriever.getClients();
+
+        for (BankClient client : clients) {
+            if (client.getId().equalsIgnoreCase(clientId)) {
+                for(Account account : client.getAccounts()) {
+                    if (account.getAccountId().equalsIgnoreCase(accountId)) {
+                        return account.getBalance();
+                    }
+                }
+            }
+        }
+
+        throw new AccountNotFoundException();
     }
 
     @Override
