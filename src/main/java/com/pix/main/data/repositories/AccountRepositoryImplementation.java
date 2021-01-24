@@ -20,13 +20,7 @@ public class AccountRepositoryImplementation implements AccountRepository {
     }
 
     @Override
-    public void removeAccount(Integer accountId) {
-
-    }
-
-    @Override
     public void addTransfer(Statement statement) {
-
     }
 
 }

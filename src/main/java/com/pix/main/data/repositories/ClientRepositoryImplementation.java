@@ -21,10 +21,4 @@ public class ClientRepositoryImplementation implements ClientRepository {
         storageManager.savePixStorage(pixStorageRetriever);
     }
 
-    @Override
-    public void removeClient(String clientId) throws IOException {
-        PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
-        pixStorageRetriever.getClients().removeIf(client -> client.getId().equals(clientId));
-        storageManager.savePixStorage(pixStorageRetriever);
-    }
 }

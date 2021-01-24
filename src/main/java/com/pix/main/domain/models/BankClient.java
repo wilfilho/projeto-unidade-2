@@ -2,7 +2,7 @@ package com.pix.main.domain.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class BankClient {
 
@@ -13,7 +13,7 @@ public class BankClient {
     private String name;
 
     @SerializedName("contas")
-    private List<Account> accounts;
+    private ArrayList<Account> accounts;
     
     public String getId() {
         return id;
@@ -31,11 +31,11 @@ public class BankClient {
         this.name = name;
     }
 
-    public List<Account> getAccounts() {
+    public ArrayList<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(List<Account> accounts) {
+    public void setAccounts(ArrayList<Account> accounts) {
         this.accounts = accounts;
     }
 }

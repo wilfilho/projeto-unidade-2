@@ -8,6 +8,4 @@ public interface ClientRepository {
 
      void addClient(BankClient client) throws IOException;
 
-     void removeClient(String clientId) throws IOException;
-
 }

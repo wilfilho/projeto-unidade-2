@@ -9,7 +9,6 @@ public interface AccountRepository {
 
      void addAccount(Account account) throws IOException;
 
-     void removeAccount(Integer accountId);
-
      void addTransfer(Statement statement);
+
 }
