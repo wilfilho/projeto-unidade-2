@@ -2,12 +2,14 @@ package com.pix.main.data.repositories;
 
 import com.pix.main.data.retriever.PixStorageManager;
 import com.pix.main.domain.errors.AccountAlreadyExistsException;
+import com.pix.main.domain.errors.AccountBalanceNotUpdatedException;
 import com.pix.main.domain.errors.AgencyNotFoundException;
 import com.pix.main.domain.errors.ClientNotFoundException;
 import com.pix.main.domain.models.*;
 import com.pix.main.domain.repositories.AccountRepository;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class AccountRepositoryImplementation implements AccountRepository {
@@ -61,6 +63,31 @@ public class AccountRepositoryImplementation implements AccountRepository {
 
         if (!accountAdded) {
             throw new ClientNotFoundException();
+        }
+
+        storageManager.savePixStorage(pixStorageRetriever);
+    }
+
+    @Override
+    public void updateBalance(BigDecimal valueToAdd, String accountId, String clientId) throws IOException, AccountBalanceNotUpdatedException {
+        PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
+        List<BankClient> clients = pixStorageRetriever.getClients();
+
+        boolean balanceUpdated = false;
+        for (BankClient client : clients) {
+            if (client.getId().equalsIgnoreCase(clientId)) {
+                for (Account account : client.getAccounts()) {
+                    if (account.getAccountId().equalsIgnoreCase(accountId)) {
+                        BigDecimal currentBalance = account.getBalance();
+                        account.setBalance(currentBalance.add(valueToAdd));
+                        balanceUpdated = true;
+                    }
+                }
+            }
+        }
+
+        if (!balanceUpdated) {
+            throw new AccountBalanceNotUpdatedException();
         }
 
         storageManager.savePixStorage(pixStorageRetriever);

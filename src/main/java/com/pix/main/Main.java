@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
+    public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException, AccountBalanceNotUpdatedException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
 
 //        addAgencyDefault(pixStorageManager);
@@ -23,7 +23,9 @@ public class Main {
 
 //        addClientAccountDefault(pixStorageManager);
 
-        addPixKeyDefault(pixStorageManager);
+//        addPixKeyDefault(pixStorageManager);
+
+        addClientAccountBalanceDefault(pixStorageManager);
     }
 
     private static void addBankDefault(PixStorageManager manager) throws BankAlreadyExistsException, IOException {
@@ -69,6 +71,12 @@ public class Main {
         firstAccount.setPixKeys(new ArrayList<>());
 
         accountRepository.addAccount(firstAccount);
+    }
+
+    private static void addClientAccountBalanceDefault(PixStorageManager manager) throws IOException, AccountBalanceNotUpdatedException {
+        AccountRepository accountRepository = new AccountRepositoryImplementation(manager);
+
+        accountRepository.updateBalance(new BigDecimal(100), "1233", "8784020709");
     }
 
     private static void addPixKeyDefault(PixStorageManager manager) throws IOException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException {
