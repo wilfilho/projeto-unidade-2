@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class Main {
+public class RepositoriesManualTests {
 
     public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException, AccountBalanceNotUpdatedException, AccountNotFoundException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
@@ -47,7 +47,7 @@ public class Main {
         bankRepository.addBank(newBank);
     }
 
-    private static void addAgencyDefault(PixStorageManager manager) throws AgencyAlreadyExistsException, IOException {
+    private static void addAgencyDefault(PixStorageManager manager) throws AgencyAlreadyExistsException, IOException, BankNotFoundException {
         AgencyRepository agencyRepository = new AgencyRepositoryImplementation(manager);
 
         Agency firstAgency = new Agency();

@@ -2,6 +2,7 @@ package com.pix.main.data.repositories;
 
 import com.pix.main.data.retriever.PixStorageManager;
 import com.pix.main.domain.errors.AgencyAlreadyExistsException;
+import com.pix.main.domain.errors.BankNotFoundException;
 import com.pix.main.domain.models.*;
 import com.pix.main.domain.repositories.AgencyRepository;
 
@@ -19,10 +20,11 @@ public class AgencyRepositoryImplementation implements AgencyRepository {
     }
 
     @Override
-    public void addAgency(Agency agency, String bankId) throws IOException, AgencyAlreadyExistsException {
+    public void addAgency(Agency agency, String bankId) throws IOException, AgencyAlreadyExistsException, BankNotFoundException {
         PixStorage pixStorage = storageManager.retrievePixStorage();
         ArrayList<Bank> banks = pixStorage.getBanks();
 
+        boolean agencyAdded = false;
         for (Bank bank : banks) {
             if (bank.getId().equalsIgnoreCase(bankId)) {
                 ArrayList<Agency> agencies = bank.getAgencies();
@@ -32,7 +34,12 @@ public class AgencyRepositoryImplementation implements AgencyRepository {
                     }
                 }
                 bank.getAgencies().add(agency);
+                agencyAdded = true;
             }
+        }
+
+        if (!agencyAdded) {
+            throw new BankNotFoundException();
         }
 
         storageManager.savePixStorage(pixStorage);
