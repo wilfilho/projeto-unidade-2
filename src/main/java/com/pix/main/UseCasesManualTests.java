@@ -1,15 +1,20 @@
 package com.pix.main;
 
 import com.google.gson.Gson;
+import com.pix.main.data.repositories.AccountRepositoryImplementation;
 import com.pix.main.data.repositories.AgencyRepositoryImplementation;
 import com.pix.main.data.repositories.BankClientRepositoryImplementation;
 import com.pix.main.data.repositories.BankRepositoryImplementation;
 import com.pix.main.data.retriever.JsonPixStorageManager;
 import com.pix.main.data.retriever.PixStorageManager;
+import com.pix.main.domain.AddAccountUseCase;
 import com.pix.main.domain.AddAgencyUseCase;
 import com.pix.main.domain.AddBankUseCase;
 import com.pix.main.domain.AddClientUseCase;
 import com.pix.main.domain.errors.*;
+import com.pix.main.domain.generators.RandomNumberGenerator;
+import com.pix.main.domain.models.AccountType;
+import com.pix.main.domain.repositories.AccountRepository;
 import com.pix.main.domain.repositories.AgencyRepository;
 import com.pix.main.domain.repositories.BankClientRepository;
 import com.pix.main.domain.repositories.BankRepository;
@@ -19,14 +24,16 @@ import java.io.IOException;
 
 public class UseCasesManualTests {
 
-    public static void main(String[] args) throws IOException, BankAlreadyExistsException, AgencyAlreadyExistsException, BankNotFoundException, InvalidPersonNameException, InvalidPersonCpfException, ClientAlreadyExistsException {
+    public static void main(String[] args) throws IOException, BankAlreadyExistsException, AgencyAlreadyExistsException, BankNotFoundException, InvalidPersonNameException, InvalidPersonCpfException, ClientAlreadyExistsException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
 
 //        addBank(pixStorageManager);
 
 //        addAgency(pixStorageManager);
 
-        addClient(pixStorageManager);
+//        addClient(pixStorageManager);
+
+        addAccount(pixStorageManager);
     }
 
     private static void addBank(PixStorageManager pixManager) throws IOException, BankAlreadyExistsException {
@@ -49,6 +56,14 @@ public class UseCasesManualTests {
         AddClientUseCase addClientUseCase = new AddClientUseCase(bankClientRepository, personCpfValidator);
 
         addClientUseCase.invoke("15749463079", "Augusto Felipe Santana");
+    }
+
+    public static void addAccount(PixStorageManager pixManager) throws IOException, ClientNotFoundException, AgencyNotFoundException, AccountAlreadyExistsException {
+        AccountRepository accountRepository = new AccountRepositoryImplementation(pixManager);
+        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+        AddAccountUseCase  addAccountUseCase = new AddAccountUseCase(accountRepository, randomNumberGenerator);
+
+        addAccountUseCase.invoke("15749463079", "001", "2562-3", AccountType.CORRENTE);
     }
 
 }
