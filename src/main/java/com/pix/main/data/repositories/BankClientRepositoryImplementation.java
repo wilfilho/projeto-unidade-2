@@ -1,6 +1,6 @@
 package com.pix.main.data.repositories;
 
-import com.pix.main.data.retriever.PixStorageManager;
+import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.errors.ClientAlreadyExistsException;
 import com.pix.main.domain.models.BankClient;
 import com.pix.main.domain.models.PixStorage;

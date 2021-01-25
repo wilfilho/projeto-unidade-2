@@ -2,8 +2,8 @@ package com.pix.main;
 
 import com.google.gson.Gson;
 import com.pix.main.data.repositories.*;
-import com.pix.main.data.retriever.JsonPixStorageManager;
-import com.pix.main.data.retriever.PixStorageManager;
+import com.pix.main.data.storage.JsonPixStorageManager;
+import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.errors.*;
 import com.pix.main.domain.models.*;
 import com.pix.main.domain.repositories.*;

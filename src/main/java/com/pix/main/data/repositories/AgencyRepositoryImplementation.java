@@ -1,6 +1,6 @@
 package com.pix.main.data.repositories;
 
-import com.pix.main.data.retriever.PixStorageManager;
+import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.errors.AgencyAlreadyExistsException;
 import com.pix.main.domain.errors.BankNotFoundException;
 import com.pix.main.domain.models.*;

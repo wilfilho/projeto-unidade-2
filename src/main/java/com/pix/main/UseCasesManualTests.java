@@ -5,12 +5,9 @@ import com.pix.main.data.repositories.AccountRepositoryImplementation;
 import com.pix.main.data.repositories.AgencyRepositoryImplementation;
 import com.pix.main.data.repositories.BankClientRepositoryImplementation;
 import com.pix.main.data.repositories.BankRepositoryImplementation;
-import com.pix.main.data.retriever.JsonPixStorageManager;
-import com.pix.main.data.retriever.PixStorageManager;
-import com.pix.main.domain.AddAccountUseCase;
-import com.pix.main.domain.AddAgencyUseCase;
-import com.pix.main.domain.AddBankUseCase;
-import com.pix.main.domain.AddClientUseCase;
+import com.pix.main.data.storage.JsonPixStorageManager;
+import com.pix.main.data.storage.PixStorageManager;
+import com.pix.main.domain.*;
 import com.pix.main.domain.errors.*;
 import com.pix.main.domain.generators.RandomNumberGenerator;
 import com.pix.main.domain.models.AccountType;
@@ -21,10 +18,11 @@ import com.pix.main.domain.repositories.BankRepository;
 import com.pix.main.domain.validators.PersonCpfValidator;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 public class UseCasesManualTests {
 
-    public static void main(String[] args) throws IOException, BankAlreadyExistsException, AgencyAlreadyExistsException, BankNotFoundException, InvalidPersonNameException, InvalidPersonCpfException, ClientAlreadyExistsException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException {
+    public static void main(String[] args) throws IOException, BankAlreadyExistsException, AgencyAlreadyExistsException, BankNotFoundException, InvalidPersonNameException, InvalidPersonCpfException, ClientAlreadyExistsException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, InvalidValueToAddIntoUserCashException, AccountBalanceNotUpdatedException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
 
 //        addBank(pixStorageManager);
@@ -33,7 +31,9 @@ public class UseCasesManualTests {
 
 //        addClient(pixStorageManager);
 
-        addAccount(pixStorageManager);
+//        addAccount(pixStorageManager);
+
+        addUserCash(pixStorageManager);
     }
 
     private static void addBank(PixStorageManager pixManager) throws IOException, BankAlreadyExistsException {
@@ -64,6 +64,13 @@ public class UseCasesManualTests {
         AddAccountUseCase  addAccountUseCase = new AddAccountUseCase(accountRepository, randomNumberGenerator);
 
         addAccountUseCase.invoke("15749463079", "001", "2562-3", AccountType.CORRENTE);
+    }
+
+    public static void addUserCash(PixStorageManager pixManager) throws InvalidValueToAddIntoUserCashException, IOException, AccountBalanceNotUpdatedException {
+        AccountRepository accountRepository = new AccountRepositoryImplementation(pixManager);
+        AddAccountCashUseCase addAccountCashUseCase = new AddAccountCashUseCase(accountRepository);
+
+        addAccountCashUseCase.invoke(new BigDecimal(500), "5378", "15749463079");
     }
 
 }
