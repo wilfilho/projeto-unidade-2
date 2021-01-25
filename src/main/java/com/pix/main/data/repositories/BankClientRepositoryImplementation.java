@@ -4,15 +4,15 @@ import com.pix.main.data.retriever.PixStorageManager;
 import com.pix.main.domain.errors.ClientAlreadyExistsException;
 import com.pix.main.domain.models.BankClient;
 import com.pix.main.domain.models.PixStorage;
-import com.pix.main.domain.repositories.ClientRepository;
+import com.pix.main.domain.repositories.BankClientRepository;
 
 import java.io.IOException;
 import java.util.List;
 
-public class ClientRepositoryImplementation implements ClientRepository {
+public class BankClientRepositoryImplementation implements BankClientRepository {
     private final PixStorageManager storageManager;
 
-    public ClientRepositoryImplementation(PixStorageManager newPixStorageManager){
+    public BankClientRepositoryImplementation(PixStorageManager newPixStorageManager){
         this.storageManager = newPixStorageManager;
     }
 

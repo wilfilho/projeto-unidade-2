@@ -58,13 +58,13 @@ public class RepositoriesManualTests {
     }
 
     private static void addClientDefault(PixStorageManager manager) throws IOException, ClientAlreadyExistsException {
-        ClientRepository clientRepository = new ClientRepositoryImplementation(manager);
+        BankClientRepository bankClientRepository = new BankClientRepositoryImplementation(manager);
 
         BankClient firstClient = new BankClient();
         firstClient.setId("20669806099");
         firstClient.setName("Julia Maria Silva");
 
-        clientRepository.addClient(firstClient);
+        bankClientRepository.addClient(firstClient);
     }
 
     private static void addClientAccountDefault(PixStorageManager manager) throws AccountAlreadyExistsException, ClientNotFoundException, AgencyNotFoundException, IOException {
