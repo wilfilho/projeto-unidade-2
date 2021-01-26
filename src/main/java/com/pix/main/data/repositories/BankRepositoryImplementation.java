@@ -2,6 +2,7 @@ package com.pix.main.data.repositories;
 
 import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.errors.BankAlreadyExistsException;
+import com.pix.main.domain.errors.BankNotFoundException;
 import com.pix.main.domain.models.Account;
 import com.pix.main.domain.models.Bank;
 import com.pix.main.domain.models.BankClient;
@@ -35,19 +36,26 @@ public class BankRepositoryImplementation implements BankRepository {
     }
 
     @Override
-    public BigDecimal getBankTotalCash(String bankId) throws IOException {
+    public BigDecimal getBankTotalCash(String bankId) throws IOException, BankNotFoundException {
         PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
 
         List<BankClient> clients = pixStorageRetriever.getClients();
 
         BigDecimal total = BigDecimal.ZERO;
 
+        boolean bankFound = false;
+
         for (BankClient client : clients) {
             for (Account account : client.getAccounts()) {
                 if (account.getBankId().equalsIgnoreCase(bankId)) {
                     total = total.add(account.getBalance());
+                    bankFound = true;
                 }
             }
+        }
+
+        if (!bankFound) {
+            throw new BankNotFoundException();
         }
 
         return total;

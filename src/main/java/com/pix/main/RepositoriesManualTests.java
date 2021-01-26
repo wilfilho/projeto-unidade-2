@@ -96,7 +96,7 @@ public class RepositoriesManualTests {
         System.out.println(totalAgencyCash);
     }
 
-    private static void showBankTotalCash(PixStorageManager manager) throws IOException {
+    private static void showBankTotalCash(PixStorageManager manager) throws IOException, BankNotFoundException {
         BankRepository bankRepository = new BankRepositoryImplementation(manager);
 
         BigDecimal totalBankCash = bankRepository.getBankTotalCash("260");
