@@ -1,2 +1,4 @@
-package com.pix.main.domain.errors;public class InvalidEmailException {
+package com.pix.main.domain.errors;
+
+public class InvalidEmailException extends Throwable {
 }
