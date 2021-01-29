@@ -18,4 +18,6 @@ public interface AccountRepository {
 
      BigDecimal getTotalCash(String accountId, String clientId) throws IOException, AccountNotFoundException;
 
+     Account getAccountByPixKey(String pixKey) throws IOException, AccountNotFoundException;
+
 }

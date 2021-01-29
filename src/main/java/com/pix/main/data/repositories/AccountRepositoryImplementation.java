@@ -112,4 +112,22 @@ public class AccountRepositoryImplementation implements AccountRepository {
         throw new AccountNotFoundException();
     }
 
+    @Override
+    public Account getAccountByPixKey(String pixKey) throws IOException, AccountNotFoundException {
+        PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
+        List<BankClient> clients = pixStorageRetriever.getClients();
+
+        for (BankClient client : clients) {
+            for (Account account : client.getAccounts()) {
+                for(PixKey key : account.getPixKeys()) {
+                    if (key.getKeyId().equalsIgnoreCase(pixKey)) {
+                        return account;
+                    }
+                }
+            }
+        }
+
+        throw new AccountNotFoundException();
+    }
+
 }
