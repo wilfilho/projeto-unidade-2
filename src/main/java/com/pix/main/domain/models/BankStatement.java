@@ -15,6 +15,7 @@ public class BankStatement {
     @SerializedName("valorEnviado")
     private BigDecimal value;
 
+
     public String getAccountTransactionId() {
         return accountTransactionId;
     }

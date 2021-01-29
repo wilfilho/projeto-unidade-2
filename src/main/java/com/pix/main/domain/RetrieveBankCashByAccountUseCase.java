@@ -8,13 +8,13 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-public class RetrieveBankStatementByAccountUseCase {
+public class RetrieveBankCashByAccountUseCase {
 
-    private AgencyRepository agencyRepository;
+    private final AgencyRepository agencyRepository;
 
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
-    public RetrieveBankStatementByAccountUseCase(AgencyRepository agencyRepository, AccountRepository accountRepository) {
+    public RetrieveBankCashByAccountUseCase(AgencyRepository agencyRepository, AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
         this.agencyRepository = agencyRepository;
     }

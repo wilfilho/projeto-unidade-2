@@ -1,20 +1,14 @@
 package com.pix.main;
 
 import com.google.gson.Gson;
-import com.pix.main.data.repositories.AccountRepositoryImplementation;
-import com.pix.main.data.repositories.AgencyRepositoryImplementation;
-import com.pix.main.data.repositories.BankClientRepositoryImplementation;
-import com.pix.main.data.repositories.BankRepositoryImplementation;
+import com.pix.main.data.repositories.*;
 import com.pix.main.data.storage.JsonPixStorageManager;
 import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.*;
 import com.pix.main.domain.errors.*;
 import com.pix.main.domain.generators.RandomNumberGenerator;
 import com.pix.main.domain.models.AccountType;
-import com.pix.main.domain.repositories.AccountRepository;
-import com.pix.main.domain.repositories.AgencyRepository;
-import com.pix.main.domain.repositories.BankClientRepository;
-import com.pix.main.domain.repositories.BankRepository;
+import com.pix.main.domain.repositories.*;
 import com.pix.main.domain.validators.PersonCpfValidator;
 
 import javax.security.auth.login.AccountNotFoundException;
@@ -23,7 +17,7 @@ import java.math.BigDecimal;
 
 public class UseCasesManualTests {
 
-    public static void main(String[] args) throws IOException, BankAlreadyExistsException, AgencyAlreadyExistsException, BankNotFoundException, InvalidPersonNameException, InvalidPersonCpfException, ClientAlreadyExistsException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, InvalidValueToAddIntoUserCashException, AccountBalanceNotUpdatedException, AccountNotFoundException {
+    public static void main(String[] args) throws IOException, BankAlreadyExistsException, AgencyAlreadyExistsException, BankNotFoundException, InvalidPersonNameException, InvalidPersonCpfException, ClientAlreadyExistsException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, InvalidValueToAddIntoUserCashException, AccountBalanceNotUpdatedException, AccountNotFoundException, PixKeyNotAddedException, PixKeyAlreadyExistsException, InvalidEmailException, InvalidPhoneNumberException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
 
 //        addBank(pixStorageManager);
@@ -38,7 +32,11 @@ public class UseCasesManualTests {
 
 //        showBankTotalCash(pixStorageManager);
 
-        showAgencyTotalCash(pixStorageManager);
+//        showAgencyTotalCash(pixStorageManager);
+
+//        addUserEmailPixKey(pixStorageManager);
+
+        addUserPhonePixKey(pixStorageManager);
     }
 
     private static void addBank(PixStorageManager pixManager) throws IOException, BankAlreadyExistsException {
@@ -88,10 +86,24 @@ public class UseCasesManualTests {
     public static void showAgencyTotalCash(PixStorageManager pixManager) throws IOException, BankNotFoundException, AccountNotFoundException {
         AgencyRepository agencyRepository = new AgencyRepositoryImplementation(pixManager);
         AccountRepository accountRepository = new AccountRepositoryImplementation(pixManager);
-        RetrieveBankStatementByAccountUseCase companyTotalCashUseCase = new RetrieveBankStatementByAccountUseCase(agencyRepository, accountRepository);
+        RetrieveBankCashByAccountUseCase companyTotalCashUseCase = new RetrieveBankCashByAccountUseCase(agencyRepository, accountRepository);
 
         System.out.println(companyTotalCashUseCase.getAccountTotalCash("3333", "20669806099"));
         System.out.println(companyTotalCashUseCase.getAgencyTotalCash("260", "0001"));
+    }
+
+    public static void addUserEmailPixKey(PixStorageManager pixManager) throws PixKeyAlreadyExistsException, InvalidEmailException, PixKeyNotAddedException, IOException {
+        PixKeyRepository pixKeyRepository = new PixKeyRepositoryImplementation(pixManager);
+        AddPixKeyUseCase addPixKeyUseCase = new AddPixKeyUseCase(pixKeyRepository);
+
+        addPixKeyUseCase.addEmailPixKey("emailteste@email.com", "5378", "15749463079");
+    }
+
+    public static void addUserPhonePixKey(PixStorageManager pixManager) throws PixKeyAlreadyExistsException, InvalidEmailException, PixKeyNotAddedException, IOException, InvalidPhoneNumberException {
+        PixKeyRepository pixKeyRepository = new PixKeyRepositoryImplementation(pixManager);
+        AddPixKeyUseCase addPixKeyUseCase = new AddPixKeyUseCase(pixKeyRepository);
+
+        addPixKeyUseCase.addPhonePixKey("(00)000000000", "1233", "87840207090");
     }
 
 }

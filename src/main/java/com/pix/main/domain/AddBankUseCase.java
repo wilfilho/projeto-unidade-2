@@ -1,6 +1,7 @@
 package com.pix.main.domain;
 
 import com.pix.main.domain.errors.BankAlreadyExistsException;
+import com.pix.main.domain.errors.InvalidBankIdException;
 import com.pix.main.domain.models.Bank;
 import com.pix.main.domain.repositories.BankRepository;
 
@@ -14,7 +15,10 @@ public class AddBankUseCase {
         this.bankRepository = bankRepository;
     }
 
-    public void invoke(String bankId, String bankName) throws IOException, BankAlreadyExistsException {
+    public void invoke(String bankId, String bankName) throws IOException, BankAlreadyExistsException, InvalidBankIdException {
+        if (bankId.length() < 3) {
+            throw new InvalidBankIdException();
+        }
         Bank bank = new Bank();
         bank.setId(bankId);
         bank.setName(bankName);

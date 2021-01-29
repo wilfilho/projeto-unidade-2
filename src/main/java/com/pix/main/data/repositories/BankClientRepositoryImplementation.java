@@ -2,6 +2,8 @@ package com.pix.main.data.repositories;
 
 import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.errors.ClientAlreadyExistsException;
+import com.pix.main.domain.errors.ClientNotFoundException;
+import com.pix.main.domain.models.Account;
 import com.pix.main.domain.models.BankClient;
 import com.pix.main.domain.models.PixStorage;
 import com.pix.main.domain.repositories.BankClientRepository;
@@ -29,6 +31,22 @@ public class BankClientRepositoryImplementation implements BankClientRepository 
 
         pixStorageRetriever.getClients().add(client);
         storageManager.savePixStorage(pixStorageRetriever);
+    }
+
+    @Override
+    public BankClient getClientByAccount(String accountId, String bankId) throws IOException, ClientNotFoundException {
+        PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
+        List<BankClient> clients = pixStorageRetriever.getClients();
+
+        for (BankClient client : clients) {
+            for (Account account : client.getAccounts()) {
+                if (account.getAccountId().equalsIgnoreCase(accountId) && account.getBankId().equalsIgnoreCase(bankId)) {
+                    return client;
+                }
+            }
+        }
+
+        throw new ClientNotFoundException();
     }
 
 }
