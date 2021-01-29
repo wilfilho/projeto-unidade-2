@@ -4,6 +4,7 @@ import com.pix.main.domain.errors.InvalidEmailException;
 import com.pix.main.domain.errors.InvalidPhoneNumberException;
 import com.pix.main.domain.errors.PixKeyAlreadyExistsException;
 import com.pix.main.domain.errors.PixKeyNotAddedException;
+import com.pix.main.domain.generators.RandomAlphaNumericGenerator;
 import com.pix.main.domain.models.PixKey;
 import com.pix.main.domain.repositories.PixKeyRepository;
 
@@ -15,8 +16,11 @@ public class AddPixKeyUseCase {
 
     private final PixKeyRepository pixKeyRepository;
 
-    public AddPixKeyUseCase(PixKeyRepository pixKeyRepository) {
+    private final RandomAlphaNumericGenerator generator;
+
+    public AddPixKeyUseCase(PixKeyRepository pixKeyRepository, RandomAlphaNumericGenerator generator) {
         this.pixKeyRepository = pixKeyRepository;
+        this.generator = generator;
     }
 
     public void addEmailPixKey(String emailPixKey, String accountId, String clientId) throws PixKeyAlreadyExistsException, IOException, PixKeyNotAddedException, InvalidEmailException {
@@ -43,6 +47,15 @@ public class AddPixKeyUseCase {
 
         PixKey pixKey = new PixKey();
         pixKey.setKeyId(phonePixKey);
+
+        pixKeyRepository.addPixKey(pixKey, accountId, clientId);
+    }
+
+    public void addRandomKey(String accountId, String clientId) throws PixKeyAlreadyExistsException, IOException, PixKeyNotAddedException {
+        String randomKey = generator.generateString(20);
+
+        PixKey pixKey = new PixKey();
+        pixKey.setKeyId(randomKey);
 
         pixKeyRepository.addPixKey(pixKey, accountId, clientId);
     }

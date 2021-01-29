@@ -6,6 +6,7 @@ import com.pix.main.data.storage.JsonPixStorageManager;
 import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.*;
 import com.pix.main.domain.errors.*;
+import com.pix.main.domain.generators.RandomAlphaNumericGenerator;
 import com.pix.main.domain.generators.RandomNumberGenerator;
 import com.pix.main.domain.models.AccountType;
 import com.pix.main.domain.repositories.*;
@@ -39,7 +40,7 @@ public class UseCasesManualTests {
         addUserPhonePixKey(pixStorageManager);
     }
 
-    private static void addBank(PixStorageManager pixManager) throws IOException, BankAlreadyExistsException {
+    private static void addBank(PixStorageManager pixManager) throws IOException, BankAlreadyExistsException, InvalidBankIdException {
         BankRepository bankRepository = new BankRepositoryImplementation(pixManager);
         AddBankUseCase addBankUseCase = new AddBankUseCase(bankRepository);
 
@@ -94,14 +95,16 @@ public class UseCasesManualTests {
 
     public static void addUserEmailPixKey(PixStorageManager pixManager) throws PixKeyAlreadyExistsException, InvalidEmailException, PixKeyNotAddedException, IOException {
         PixKeyRepository pixKeyRepository = new PixKeyRepositoryImplementation(pixManager);
-        AddPixKeyUseCase addPixKeyUseCase = new AddPixKeyUseCase(pixKeyRepository);
+        RandomAlphaNumericGenerator generator = new RandomAlphaNumericGenerator();
+        AddPixKeyUseCase addPixKeyUseCase = new AddPixKeyUseCase(pixKeyRepository, generator);
 
         addPixKeyUseCase.addEmailPixKey("emailteste@email.com", "5378", "15749463079");
     }
 
     public static void addUserPhonePixKey(PixStorageManager pixManager) throws PixKeyAlreadyExistsException, InvalidEmailException, PixKeyNotAddedException, IOException, InvalidPhoneNumberException {
         PixKeyRepository pixKeyRepository = new PixKeyRepositoryImplementation(pixManager);
-        AddPixKeyUseCase addPixKeyUseCase = new AddPixKeyUseCase(pixKeyRepository);
+        RandomAlphaNumericGenerator generator = new RandomAlphaNumericGenerator();
+        AddPixKeyUseCase addPixKeyUseCase = new AddPixKeyUseCase(pixKeyRepository, generator);
 
         addPixKeyUseCase.addPhonePixKey("(00)000000000", "1233", "87840207090");
     }
