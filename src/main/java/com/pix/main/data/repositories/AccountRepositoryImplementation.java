@@ -1,6 +1,6 @@
 package com.pix.main.data.repositories;
 
-import com.pix.main.data.retriever.PixStorageManager;
+import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.errors.AccountAlreadyExistsException;
 import com.pix.main.domain.errors.AccountBalanceNotUpdatedException;
 import com.pix.main.domain.errors.AgencyNotFoundException;
@@ -104,6 +104,24 @@ public class AccountRepositoryImplementation implements AccountRepository {
                 for(Account account : client.getAccounts()) {
                     if (account.getAccountId().equalsIgnoreCase(accountId)) {
                         return account.getBalance();
+                    }
+                }
+            }
+        }
+
+        throw new AccountNotFoundException();
+    }
+
+    @Override
+    public Account getAccountByPixKey(String pixKey) throws IOException, AccountNotFoundException {
+        PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
+        List<BankClient> clients = pixStorageRetriever.getClients();
+
+        for (BankClient client : clients) {
+            for (Account account : client.getAccounts()) {
+                for(PixKey key : account.getPixKeys()) {
+                    if (key.getKeyId().equalsIgnoreCase(pixKey)) {
+                        return account;
                     }
                 }
             }

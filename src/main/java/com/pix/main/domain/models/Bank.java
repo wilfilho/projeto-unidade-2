@@ -13,7 +13,7 @@ public class Bank {
     private String name;
 
     @SerializedName("agencias")
-    private ArrayList<Agency> agencies;
+    private ArrayList<Agency> agencies = new ArrayList<>();
 
     public String getId() {
         return id;

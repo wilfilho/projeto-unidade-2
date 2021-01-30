@@ -17,7 +17,7 @@ public class Account {
     private String bankId;
 
     @SerializedName("saldo")
-    private BigDecimal balance;
+    private BigDecimal balance = new BigDecimal(0);
 
     @SerializedName("tipo")
     private String accountType;

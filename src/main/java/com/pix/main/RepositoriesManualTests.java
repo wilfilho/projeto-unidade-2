@@ -2,8 +2,8 @@ package com.pix.main;
 
 import com.google.gson.Gson;
 import com.pix.main.data.repositories.*;
-import com.pix.main.data.retriever.JsonPixStorageManager;
-import com.pix.main.data.retriever.PixStorageManager;
+import com.pix.main.data.storage.JsonPixStorageManager;
+import com.pix.main.data.storage.PixStorageManager;
 import com.pix.main.domain.errors.*;
 import com.pix.main.domain.models.*;
 import com.pix.main.domain.repositories.*;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class Main {
+public class RepositoriesManualTests {
 
     public static void main(String[] args) throws IOException, ClientNotFoundException, AccountAlreadyExistsException, AgencyNotFoundException, ClientAlreadyExistsException, PixKeyAlreadyExistsException, PixKeyNotAddedException, AccountBalanceNotUpdatedException, AccountNotFoundException {
         PixStorageManager pixStorageManager = new JsonPixStorageManager(new Gson());
@@ -47,7 +47,7 @@ public class Main {
         bankRepository.addBank(newBank);
     }
 
-    private static void addAgencyDefault(PixStorageManager manager) throws AgencyAlreadyExistsException, IOException {
+    private static void addAgencyDefault(PixStorageManager manager) throws AgencyAlreadyExistsException, IOException, BankNotFoundException {
         AgencyRepository agencyRepository = new AgencyRepositoryImplementation(manager);
 
         Agency firstAgency = new Agency();
@@ -58,13 +58,13 @@ public class Main {
     }
 
     private static void addClientDefault(PixStorageManager manager) throws IOException, ClientAlreadyExistsException {
-        ClientRepository clientRepository = new ClientRepositoryImplementation(manager);
+        BankClientRepository bankClientRepository = new BankClientRepositoryImplementation(manager);
 
         BankClient firstClient = new BankClient();
         firstClient.setId("20669806099");
         firstClient.setName("Julia Maria Silva");
 
-        clientRepository.addClient(firstClient);
+        bankClientRepository.addClient(firstClient);
     }
 
     private static void addClientAccountDefault(PixStorageManager manager) throws AccountAlreadyExistsException, ClientNotFoundException, AgencyNotFoundException, IOException {
@@ -96,7 +96,7 @@ public class Main {
         System.out.println(totalAgencyCash);
     }
 
-    private static void showBankTotalCash(PixStorageManager manager) throws IOException {
+    private static void showBankTotalCash(PixStorageManager manager) throws IOException, BankNotFoundException {
         BankRepository bankRepository = new BankRepositoryImplementation(manager);
 
         BigDecimal totalBankCash = bankRepository.getBankTotalCash("260");

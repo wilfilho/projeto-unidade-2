@@ -1,4 +1,4 @@
-package com.pix.main.data.retriever;
+package com.pix.main.data.storage;
 
 import com.pix.main.domain.models.PixStorage;
 
