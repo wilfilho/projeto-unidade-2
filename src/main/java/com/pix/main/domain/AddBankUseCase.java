@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class AddBankUseCase {
 
-    private BankRepository bankRepository;
+    private final BankRepository bankRepository;
 
     public AddBankUseCase(BankRepository bankRepository) {
         this.bankRepository = bankRepository;
@@ -19,6 +19,7 @@ public class AddBankUseCase {
         if (bankId.length() < 3) {
             throw new InvalidBankIdException();
         }
+
         Bank bank = new Bank();
         bank.setId(bankId);
         bank.setName(bankName);

@@ -23,9 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82696a19-f1cb-4b3b-9e38-c89ad37a1aef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/StartScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/StartScreenPresentation.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/addBank/AddBankScreen.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/addBank/AddBankScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/start/StartScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddBankUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddBankUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/EmptyView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/StartScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/StartScreenPresentation.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/start/StartScreenPresentation.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,27 +75,66 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.pix.main.domain.errors" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libs" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/start" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.UseCasesManualTests">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="AddBankDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pix.main.presentation.screens.addBank.AddBankDialog" />
+      <module name="projeto-unidade-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pix.main.presentation.screens.addBank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pix.main.presentation.Main" />
+      <module name="projeto-unidade-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pix.main.presentation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RepositoriesManualTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pix.main.RepositoriesManualTests" />
       <module name="projeto-unidade-2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.pix.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pix.main.presentation.StartScreen" />
+      <module name="projeto-unidade-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pix.main.presentation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,6 +157,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.AddBankDialog" />
+        <item itemvalue="Application.StartScreen" />
         <item itemvalue="Application.UseCasesManualTests" />
       </list>
     </recent_temporary>
@@ -158,26 +206,26 @@
       <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
     <state x="421" y="-852" key="#xdebugger.evaluate/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611700805013" />
-    <state width="2518" height="315" key="GridCell.Tab.0.bottom" timestamp="1611708976436">
-      <screen x="-622" y="-1057" width="2560" height="1057" />
+    <state width="2518" height="561" key="GridCell.Tab.0.bottom" timestamp="1612050996212">
+      <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
     <state width="2518" height="315" key="GridCell.Tab.0.bottom/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1611708976436" />
-    <state width="2518" height="561" key="GridCell.Tab.0.bottom/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611701097993" />
-    <state width="2518" height="315" key="GridCell.Tab.0.center" timestamp="1611708976436">
-      <screen x="-622" y="-1057" width="2560" height="1057" />
+    <state width="2518" height="561" key="GridCell.Tab.0.bottom/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612050996212" />
+    <state width="2518" height="561" key="GridCell.Tab.0.center" timestamp="1612050996211">
+      <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
     <state width="2518" height="315" key="GridCell.Tab.0.center/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1611708976436" />
-    <state width="2518" height="561" key="GridCell.Tab.0.center/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611701097992" />
-    <state width="2518" height="315" key="GridCell.Tab.0.left" timestamp="1611708976436">
-      <screen x="-622" y="-1057" width="2560" height="1057" />
+    <state width="2518" height="561" key="GridCell.Tab.0.center/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612050996211" />
+    <state width="2518" height="561" key="GridCell.Tab.0.left" timestamp="1612050996210">
+      <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
     <state width="2518" height="315" key="GridCell.Tab.0.left/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1611708976436" />
-    <state width="2518" height="561" key="GridCell.Tab.0.left/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611701097991" />
-    <state width="2518" height="315" key="GridCell.Tab.0.right" timestamp="1611708976436">
-      <screen x="-622" y="-1057" width="2560" height="1057" />
+    <state width="2518" height="561" key="GridCell.Tab.0.left/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612050996210" />
+    <state width="2518" height="561" key="GridCell.Tab.0.right" timestamp="1612050996212">
+      <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
     <state width="2518" height="315" key="GridCell.Tab.0.right/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1611708976436" />
-    <state width="2518" height="561" key="GridCell.Tab.0.right/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611701097992" />
+    <state width="2518" height="561" key="GridCell.Tab.0.right/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612050996212" />
     <state width="2518" height="315" key="GridCell.Tab.1.bottom" timestamp="1611708976437">
       <screen x="-622" y="-1057" width="2560" height="1057" />
     </state>
@@ -198,9 +246,9 @@
     </state>
     <state width="2518" height="315" key="GridCell.Tab.1.right/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1611708976437" />
     <state width="2518" height="315" key="GridCell.Tab.1.right/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611700808273" />
-    <state x="323" y="-839" width="670" height="676" key="search.everywhere.popup" timestamp="1611616533750">
+    <state x="323" y="-839" width="670" height="676" key="search.everywhere.popup" timestamp="1612049482706">
       <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
-    <state x="323" y="-839" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611616533750" />
+    <state x="323" y="-839" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612049482706" />
   </component>
 </project>
