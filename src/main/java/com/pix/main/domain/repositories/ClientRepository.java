@@ -1,13 +1,12 @@
 package com.pix.main.domain.repositories;
 
+import com.pix.main.domain.errors.ClientAlreadyExistsException;
 import com.pix.main.domain.models.BankClient;
 
 import java.io.IOException;
 
 public interface ClientRepository {
 
-     void addClient(BankClient client) throws IOException;
-
-     void removeClient(String clientId) throws IOException;
+     void addClient(BankClient client) throws IOException, ClientAlreadyExistsException;
 
 }

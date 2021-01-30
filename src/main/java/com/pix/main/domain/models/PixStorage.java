@@ -10,7 +10,7 @@ public class PixStorage {
     private ArrayList<Bank> banks;
 
     @SerializedName("extratos")
-    private ArrayList<Statement> statements;
+    private ArrayList<BankStatement> bankStatements;
 
     @SerializedName("clientes")
     private ArrayList<BankClient> clients;
@@ -23,12 +23,12 @@ public class PixStorage {
         this.banks = banks;
     }
 
-    public ArrayList<Statement> getStatements() {
-        return statements;
+    public ArrayList<BankStatement> getStatements() {
+        return bankStatements;
     }
 
-    public void setStatements(ArrayList<Statement> statements) {
-        this.statements = statements;
+    public void setStatements(ArrayList<BankStatement> bankStatements) {
+        this.bankStatements = bankStatements;
     }
 
     public ArrayList<BankClient> getClients() {
