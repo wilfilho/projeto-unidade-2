@@ -1,4 +1,6 @@
-package com.pix.main.presentation;
+package com.pix.main.presentation.screens.start;
+
+import com.pix.main.presentation.screens.addBank.AddBankScreen;
 
 import javax.swing.*;
 
@@ -21,6 +23,10 @@ public class StartScreen extends JFrame {
 
         JMenu bankMenu = new JMenu("Bancos");
         JMenuItem addBankMenuItem = new JMenuItem("Adicionar banco");
+        addBankMenuItem.addActionListener((event) -> {
+            dispose();
+            new AddBankScreen();
+        });
         bankMenu.add(addBankMenuItem);
 
         JMenu clientMenu = new JMenu("Usuários");
