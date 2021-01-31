@@ -1,9 +1,12 @@
 package com.pix.main.presentation.screens.start;
 
+import com.pix.main.domain.AddAgencyUseCase;
 import com.pix.main.domain.AddBankUseCase;
 import com.pix.main.domain.AddClientUseCase;
+import com.pix.main.presentation.screens.addAgency.AddAgencyScreen;
 import com.pix.main.presentation.screens.addBank.AddBankScreen;
 import com.pix.main.presentation.screens.addUser.AddUserScreen;
+import com.pix.main.presentation.screens.userAccounts.UserAccountsScreen;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -15,9 +18,15 @@ public class StartScreen extends JFrame {
 
     private AddClientUseCase addClientUseCase;
 
-    public StartScreen(AddBankUseCase addBankUseCase, AddClientUseCase addClientUseCase) {
+    private AddAgencyUseCase addAgencyUseCase;
+
+    public StartScreen(
+            AddBankUseCase addBankUseCase,
+            AddClientUseCase addClientUseCase,
+            AddAgencyUseCase addAgencyUseCase) {
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
+        this.addAgencyUseCase = addAgencyUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -37,6 +46,10 @@ public class StartScreen extends JFrame {
         JMenuItem addBankMenuItem = new JMenuItem("Adicionar banco");
         addBankMenuItem.addActionListener((event) -> new AddBankScreen(addBankUseCase));
         bankMenu.add(addBankMenuItem);
+
+        JMenuItem addAgencyMenuItem = new JMenuItem("Adicionar agência");
+        addAgencyMenuItem.addActionListener((event) -> new AddAgencyScreen(addAgencyUseCase));
+        bankMenu.add(addAgencyMenuItem);
 
         JMenu clientMenu = new JMenu("Usuários");
         JMenuItem addClientMenuItem = new JMenuItem("Adicionar usuário");
@@ -64,6 +77,11 @@ public class StartScreen extends JFrame {
         JTextField cpfField = new JTextField();
 
         JButton loginBtn = new JButton("Entrar");
+        loginBtn.addActionListener(e -> {
+            UserAccountsScreen accountsScreen = new UserAccountsScreen();
+            accountsScreen.setVisible(true);
+            dispose();
+        });
 
         panel.add(label, constraints);
         panel.add(cpfField, constraints);

@@ -1,12 +1,15 @@
 package com.pix.main.presentation;
 
 import com.google.gson.Gson;
+import com.pix.main.data.repositories.AgencyRepositoryImplementation;
 import com.pix.main.data.repositories.BankClientRepositoryImplementation;
 import com.pix.main.data.repositories.BankRepositoryImplementation;
 import com.pix.main.data.storage.JsonPixStorageManager;
 import com.pix.main.data.storage.PixStorageManager;
+import com.pix.main.domain.AddAgencyUseCase;
 import com.pix.main.domain.AddBankUseCase;
 import com.pix.main.domain.AddClientUseCase;
+import com.pix.main.domain.repositories.AgencyRepository;
 import com.pix.main.domain.repositories.BankClientRepository;
 import com.pix.main.domain.repositories.BankRepository;
 import com.pix.main.domain.validators.PersonCpfValidator;
@@ -20,7 +23,8 @@ public class Main {
         EventQueue.invokeLater(() -> {
             StartScreen ex = new StartScreen(
                     providesAddBankUseCase(),
-                    providesAddClientUseCase());
+                    providesAddClientUseCase(),
+                    providesAddAgencyUseCase());
             ex.setVisible(true);
         });
     }
@@ -43,6 +47,14 @@ public class Main {
 
     private static BankClientRepository providesClientRepository() {
         return new BankClientRepositoryImplementation(providesPixStorageManager());
+    }
+
+    private static AddAgencyUseCase providesAddAgencyUseCase() {
+        return new AddAgencyUseCase(providesAddAgencyRepository());
+    }
+
+    private static AgencyRepository providesAddAgencyRepository() {
+        return new AgencyRepositoryImplementation(providesPixStorageManager());
     }
 
     private static PixStorageManager providesPixStorageManager() {

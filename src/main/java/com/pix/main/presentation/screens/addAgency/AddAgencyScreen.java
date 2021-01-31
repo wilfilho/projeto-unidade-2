@@ -1,27 +1,27 @@
-package com.pix.main.presentation.screens.addBank;
+package com.pix.main.presentation.screens.addAgency;
 
-import com.pix.main.domain.AddBankUseCase;
-import com.pix.main.domain.errors.BankAlreadyExistsException;
-import com.pix.main.domain.errors.InvalidBankIdException;
+import com.pix.main.domain.AddAgencyUseCase;
+import com.pix.main.domain.errors.AgencyAlreadyExistsException;
+import com.pix.main.domain.errors.BankNotFoundException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.IOException;
 
-public class AddBankScreen extends JFrame {
+public class AddAgencyScreen extends JFrame {
 
-    private AddBankUseCase addBankUseCase;
+    private AddAgencyUseCase addAgencyUseCase;
 
-    public AddBankScreen(AddBankUseCase addBankUseCase) {
-        this.addBankUseCase = addBankUseCase;
+    public AddAgencyScreen(AddAgencyUseCase addAgencyUseCase) {
+        this.addAgencyUseCase = addAgencyUseCase;
         configureScreen();
         configureMainContent();
     }
 
     private void configureScreen() {
-        setTitle("Adicionar Banco");
-        setSize(250, 200);
+        setTitle("Adicionar agência");
+        setSize(250, 300);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
@@ -41,22 +41,26 @@ public class AddBankScreen extends JFrame {
 
         JTextField bankCodeField = new JTextField();
 
-        JLabel bankNameLabel = new JLabel("Digite o nome do banco:");
+        JLabel agencyCodeLabel = new JLabel("Digite o código da nova agência:");
 
-        JTextField bankNameField = new JTextField();
+        JTextField agencyCodeField = new JTextField();
+
+        JLabel agencyNameLabel = new JLabel("Digite o nome da nova agência:");
+
+        JTextField agencyNameField = new JTextField();
 
         JButton registerBtn = new JButton("Cadastrar");
         registerBtn.addActionListener(e -> {
             try {
-                addBankUseCase.invoke(bankCodeField.getText(), bankNameField.getText());
-                dispose();
+                addAgencyUseCase.invoke(bankCodeField.getText(), agencyCodeField.getText(), agencyNameField.getText());
             } catch (IOException ioException) {
                 ioException.printStackTrace();
-            } catch (BankAlreadyExistsException bankAlreadyExistsException) {
-                bankAlreadyExistsException.printStackTrace();
-            } catch (InvalidBankIdException invalidBankIdException) {
-                invalidBankIdException.printStackTrace();
+            } catch (AgencyAlreadyExistsException agencyAlreadyExistsException) {
+                agencyAlreadyExistsException.printStackTrace();
+            } catch (BankNotFoundException bankNotFoundException) {
+                bankNotFoundException.printStackTrace();
             }
+            dispose();
         });
         JButton cancelBtn = new JButton("Cancelar");
         cancelBtn.addActionListener(e -> dispose());
@@ -64,13 +68,15 @@ public class AddBankScreen extends JFrame {
 
         panel.add(label, constraints);
         panel.add(bankCodeField, constraints);
-        panel.add(bankNameLabel, constraints);
-        panel.add(bankNameField, constraints);
+        panel.add(agencyCodeLabel, constraints);
+        panel.add(agencyCodeField, constraints);
+        panel.add(agencyNameLabel, constraints);
+        panel.add(agencyNameField, constraints);
         panel.add(registerBtn, constraints);
         panel.add(cancelBtn, constraints);
 
         setContentPane(panel);
     }
 
-}
 
+}
