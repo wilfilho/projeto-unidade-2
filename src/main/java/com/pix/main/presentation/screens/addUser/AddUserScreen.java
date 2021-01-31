@@ -61,12 +61,15 @@ public class AddUserScreen extends JFrame {
                 invalidPersonCpfException.printStackTrace();
             }
         });
+        JButton cancelBtn = new JButton("Cancelar");
+        cancelBtn.addActionListener(e -> dispose());
 
         panel.add(label, constraints);
         panel.add(userCodeField, constraints);
         panel.add(userNameLabel, constraints);
         panel.add(userNameField, constraints);
         panel.add(registerBtn, constraints);
+        panel.add(cancelBtn, constraints);
 
         setContentPane(panel);
     }
