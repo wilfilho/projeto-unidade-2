@@ -30,7 +30,7 @@ public class AddClientUseCase {
 
         if (names.length >= 2) {
             for (String name : names) {
-                if (name.length() < 3) {
+                if (name.length() < 2) {
                     hasValidName = false;
                 }
             }

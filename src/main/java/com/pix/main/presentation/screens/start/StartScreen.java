@@ -1,7 +1,9 @@
 package com.pix.main.presentation.screens.start;
 
 import com.pix.main.domain.AddBankUseCase;
+import com.pix.main.domain.AddClientUseCase;
 import com.pix.main.presentation.screens.addBank.AddBankScreen;
+import com.pix.main.presentation.screens.addUser.AddUserScreen;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -11,8 +13,11 @@ public class StartScreen extends JFrame {
 
     private AddBankUseCase addBankUseCase;
 
-    public StartScreen(AddBankUseCase addBankUseCase) {
+    private AddClientUseCase addClientUseCase;
+
+    public StartScreen(AddBankUseCase addBankUseCase, AddClientUseCase addClientUseCase) {
         this.addBankUseCase = addBankUseCase;
+        this.addClientUseCase = addClientUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -30,13 +35,12 @@ public class StartScreen extends JFrame {
 
         JMenu bankMenu = new JMenu("Bancos");
         JMenuItem addBankMenuItem = new JMenuItem("Adicionar banco");
-        addBankMenuItem.addActionListener((event) -> {
-            new AddBankScreen(addBankUseCase);
-        });
+        addBankMenuItem.addActionListener((event) -> new AddBankScreen(addBankUseCase));
         bankMenu.add(addBankMenuItem);
 
         JMenu clientMenu = new JMenu("Usuários");
         JMenuItem addClientMenuItem = new JMenuItem("Adicionar usuário");
+        addClientMenuItem.addActionListener(e -> new AddUserScreen(addClientUseCase));
         clientMenu.add(addClientMenuItem);
 
         menuBar.add(bankMenu);
