@@ -12,4 +12,12 @@ public enum AccountType {
         return "SALARIO";
     }
 
+    public static AccountType toAccountType(String accountType) {
+        if (accountType.equalsIgnoreCase("Corrente")) {
+            return CORRENTE;
+        } else if (accountType.equalsIgnoreCase("Poupança")) {
+            return POUPANCA;
+        } else return SALARIO;
+    }
+
 }

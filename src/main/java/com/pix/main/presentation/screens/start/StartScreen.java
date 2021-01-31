@@ -1,8 +1,7 @@
 package com.pix.main.presentation.screens.start;
 
-import com.pix.main.domain.AddAgencyUseCase;
-import com.pix.main.domain.AddBankUseCase;
-import com.pix.main.domain.AddClientUseCase;
+import com.pix.main.domain.*;
+import com.pix.main.domain.errors.ClientNotFoundException;
 import com.pix.main.presentation.screens.addAgency.AddAgencyScreen;
 import com.pix.main.presentation.screens.addBank.AddBankScreen;
 import com.pix.main.presentation.screens.addUser.AddUserScreen;
@@ -11,6 +10,7 @@ import com.pix.main.presentation.screens.userAccounts.UserAccountsScreen;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.io.IOException;
 
 public class StartScreen extends JFrame {
 
@@ -20,13 +20,21 @@ public class StartScreen extends JFrame {
 
     private AddAgencyUseCase addAgencyUseCase;
 
+    private RetrieveUserAccountsUseCase retrieveUserAccountsUseCase;
+
+    private AddAccountUseCase addAccountUseCase;
+
     public StartScreen(
             AddBankUseCase addBankUseCase,
             AddClientUseCase addClientUseCase,
-            AddAgencyUseCase addAgencyUseCase) {
+            AddAgencyUseCase addAgencyUseCase,
+            RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
+            AddAccountUseCase addAccountUseCase) {
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
         this.addAgencyUseCase = addAgencyUseCase;
+        this.retrieveUserAccountsUseCase = retrieveUserAccountsUseCase;
+        this.addAccountUseCase = addAccountUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -78,7 +86,17 @@ public class StartScreen extends JFrame {
 
         JButton loginBtn = new JButton("Entrar");
         loginBtn.addActionListener(e -> {
-            UserAccountsScreen accountsScreen = new UserAccountsScreen();
+            UserAccountsScreen accountsScreen = null;
+            try {
+                accountsScreen = new UserAccountsScreen(
+                        cpfField.getText(),
+                        retrieveUserAccountsUseCase,
+                        addAccountUseCase);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            } catch (ClientNotFoundException clientNotFoundException) {
+                clientNotFoundException.printStackTrace();
+            }
             accountsScreen.setVisible(true);
             dispose();
         });

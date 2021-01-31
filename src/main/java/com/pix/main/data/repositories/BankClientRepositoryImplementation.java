@@ -49,4 +49,18 @@ public class BankClientRepositoryImplementation implements BankClientRepository 
         throw new ClientNotFoundException();
     }
 
+    @Override
+    public List<Account> getAccounts(String clientId) throws IOException, ClientNotFoundException {
+        PixStorage pixStorageRetriever = storageManager.retrievePixStorage();
+        List<BankClient> clients = pixStorageRetriever.getClients();
+
+        for (BankClient client : clients) {
+            if (client.getId().equalsIgnoreCase(clientId)) {
+                return client.getAccounts();
+            }
+        }
+
+        throw new ClientNotFoundException();
+    }
+
 }
