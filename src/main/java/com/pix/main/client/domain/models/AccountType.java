@@ -1,4 +1,4 @@
-package com.pix.main.domain.models;
+package com.pix.main.client.domain.models;
 
 public enum AccountType {
     CORRENTE, POUPANCA, SALARIO;

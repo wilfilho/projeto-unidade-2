@@ -1,4 +1,4 @@
-package com.pix.main.presentation.screens.addUser;
+package com.pix.main.client.presentation.addUser;
 
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.domain.errors.ClientAlreadyExistsException;

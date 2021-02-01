@@ -1,6 +1,6 @@
-package com.pix.main.domain.repositories;
+package com.pix.main.bank.domain.repositories;
 
-import com.pix.main.domain.models.BankStatement;
+import com.pix.main.bank.domain.models.BankStatement;
 
 import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.pix.main.domain.generators;
+package com.pix.main.core.generators;
 
 import java.util.Random;
 

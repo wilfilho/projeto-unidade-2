@@ -1,13 +1,13 @@
 package com.pix.main.bank.data;
 
-import com.pix.main.data.storage.PixStorageManager;
+import com.pix.main.core.storage.PixStorageManager;
 import com.pix.main.bank.domain.errors.BankAlreadyExistsException;
 import com.pix.main.bank.domain.errors.BankNotFoundException;
-import com.pix.main.domain.models.Account;
-import com.pix.main.domain.models.Bank;
-import com.pix.main.domain.models.BankClient;
-import com.pix.main.domain.models.PixStorage;
-import com.pix.main.domain.repositories.BankRepository;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.bank.domain.models.Bank;
+import com.pix.main.client.domain.models.BankClient;
+import com.pix.main.client.domain.models.PixStorage;
+import com.pix.main.bank.domain.repositories.BankRepository;
 
 import java.io.IOException;
 import java.math.BigDecimal;

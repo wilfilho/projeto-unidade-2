@@ -1,11 +1,11 @@
-package com.pix.main.client;
+package com.pix.main.client.presentation.userAccounts;
 
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.Account;
-import com.pix.main.presentation.Main;
-import com.pix.main.presentation.screens.addAccount.AddAccountScreen;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.start.Main;
+import com.pix.main.client.presentation.addAccount.AddAccountScreen;
 
 import javax.swing.*;
 import java.io.IOException;

@@ -1,10 +1,10 @@
-package com.pix.main.domain.repositories;
+package com.pix.main.client.domain.repositories;
 
 import com.pix.main.client.domain.errors.AccountAlreadyExistsException;
 import com.pix.main.client.domain.errors.AccountBalanceNotUpdatedException;
 import com.pix.main.bank.domain.errors.AgencyNotFoundException;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.Account;
+import com.pix.main.client.domain.models.Account;
 
 import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;

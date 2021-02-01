@@ -1,12 +1,12 @@
-package com.pix.main.domain;
+package com.pix.main.client.domain;
 
-import com.pix.main.domain.errors.InvalidEmailException;
-import com.pix.main.domain.errors.InvalidPhoneNumberException;
-import com.pix.main.domain.errors.PixKeyAlreadyExistsException;
-import com.pix.main.domain.errors.PixKeyNotAddedException;
-import com.pix.main.domain.generators.RandomAlphaNumericGenerator;
-import com.pix.main.domain.models.PixKey;
-import com.pix.main.domain.repositories.PixKeyRepository;
+import com.pix.main.client.domain.errors.InvalidEmailException;
+import com.pix.main.client.domain.errors.InvalidPhoneNumberException;
+import com.pix.main.client.domain.errors.PixKeyAlreadyExistsException;
+import com.pix.main.client.domain.errors.PixKeyNotAddedException;
+import com.pix.main.core.generators.RandomAlphaNumericGenerator;
+import com.pix.main.client.domain.models.PixKey;
+import com.pix.main.client.domain.repositories.PixKeyRepository;
 
 import java.io.IOException;
 import java.util.regex.Matcher;

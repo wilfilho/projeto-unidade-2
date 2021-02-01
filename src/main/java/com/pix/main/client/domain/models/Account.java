@@ -1,6 +1,7 @@
-package com.pix.main.domain.models;
+package com.pix.main.client.domain.models;
 
 import com.google.gson.annotations.SerializedName;
+import com.pix.main.bank.domain.models.BankStatement;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

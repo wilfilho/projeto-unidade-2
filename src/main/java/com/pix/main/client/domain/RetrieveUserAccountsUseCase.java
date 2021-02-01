@@ -1,7 +1,7 @@
-package com.pix.main.domain;
+package com.pix.main.client.domain;
 
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.Account;
+import com.pix.main.client.domain.models.Account;
 import com.pix.main.client.domain.repositories.BankClientRepository;
 
 import java.io.IOException;

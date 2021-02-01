@@ -1,11 +1,16 @@
-package com.pix.main.data.repositories;
+package com.pix.main.client.data;
 
+import com.pix.main.bank.domain.models.Agency;
+import com.pix.main.bank.domain.models.Bank;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.client.domain.models.BankClient;
+import com.pix.main.client.domain.models.PixKey;
+import com.pix.main.client.domain.models.PixStorage;
 import com.pix.main.core.storage.PixStorageManager;
 import com.pix.main.client.domain.errors.AccountAlreadyExistsException;
 import com.pix.main.client.domain.errors.AccountBalanceNotUpdatedException;
 import com.pix.main.bank.domain.errors.AgencyNotFoundException;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.*;
 import com.pix.main.client.domain.repositories.AccountRepository;
 
 import javax.security.auth.login.AccountNotFoundException;

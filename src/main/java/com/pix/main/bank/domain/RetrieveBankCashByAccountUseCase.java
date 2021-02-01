@@ -1,4 +1,4 @@
-package com.pix.main.domain;
+package com.pix.main.bank.domain;
 
 import com.pix.main.client.domain.repositories.AccountRepository;
 import com.pix.main.bank.domain.repositories.AgencyRepository;

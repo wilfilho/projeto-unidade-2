@@ -1,4 +1,4 @@
-package com.pix.main.presentation.screens.start;
+package com.pix.main.start.screens.start;
 
 import com.pix.main.bank.domain.AddAgencyUseCase;
 import com.pix.main.bank.domain.AddBankUseCase;

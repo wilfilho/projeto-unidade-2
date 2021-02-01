@@ -1,4 +1,4 @@
-package com.pix.main.domain.models;
+package com.pix.main.client.domain.models;
 
 import com.google.gson.annotations.SerializedName;
 

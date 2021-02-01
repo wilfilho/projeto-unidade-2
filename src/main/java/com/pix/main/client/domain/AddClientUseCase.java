@@ -1,11 +1,11 @@
-package com.pix.main.domain;
+package com.pix.main.client.domain;
 
-import com.pix.main.domain.errors.ClientAlreadyExistsException;
-import com.pix.main.domain.errors.InvalidPersonCpfException;
-import com.pix.main.domain.errors.InvalidPersonNameException;
-import com.pix.main.domain.models.BankClient;
-import com.pix.main.domain.repositories.BankClientRepository;
-import com.pix.main.domain.validators.PersonCpfValidator;
+import com.pix.main.client.domain.errors.ClientAlreadyExistsException;
+import com.pix.main.client.domain.errors.InvalidPersonCpfException;
+import com.pix.main.client.domain.errors.InvalidPersonNameException;
+import com.pix.main.client.domain.models.BankClient;
+import com.pix.main.client.domain.repositories.BankClientRepository;
+import com.pix.main.client.domain.validators.PersonCpfValidator;
 
 import java.io.IOException;
 

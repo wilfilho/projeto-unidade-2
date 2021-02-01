@@ -1,8 +1,11 @@
 package com.pix.main.bank.data;
 
-import com.pix.main.data.storage.PixStorageManager;
-import com.pix.main.domain.models.*;
-import com.pix.main.domain.repositories.BankStatementRepository;
+import com.pix.main.bank.domain.models.BankStatement;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.client.domain.models.BankClient;
+import com.pix.main.client.domain.models.PixStorage;
+import com.pix.main.core.storage.PixStorageManager;
+import com.pix.main.bank.domain.repositories.BankStatementRepository;
 
 import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;

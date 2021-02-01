@@ -1,4 +1,4 @@
-package com.pix.main.domain.errors;
+package com.pix.main.client.domain.errors;
 
 public class InvalidAccountIdException extends Throwable {
 }

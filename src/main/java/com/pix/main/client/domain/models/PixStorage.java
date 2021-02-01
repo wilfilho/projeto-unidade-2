@@ -1,6 +1,8 @@
-package com.pix.main.domain.models;
+package com.pix.main.client.domain.models;
 
 import com.google.gson.annotations.SerializedName;
+import com.pix.main.bank.domain.models.Bank;
+import com.pix.main.bank.domain.models.BankStatement;
 
 import java.util.ArrayList;
 

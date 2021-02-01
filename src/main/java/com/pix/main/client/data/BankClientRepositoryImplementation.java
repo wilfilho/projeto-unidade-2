@@ -1,11 +1,11 @@
-package com.pix.main.data.repositories;
+package com.pix.main.client.data;
 
 import com.pix.main.core.storage.PixStorageManager;
 import com.pix.main.client.domain.errors.ClientAlreadyExistsException;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.Account;
-import com.pix.main.domain.models.BankClient;
-import com.pix.main.domain.models.PixStorage;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.client.domain.models.BankClient;
+import com.pix.main.client.domain.models.PixStorage;
 import com.pix.main.client.domain.repositories.BankClientRepository;
 
 import java.io.IOException;

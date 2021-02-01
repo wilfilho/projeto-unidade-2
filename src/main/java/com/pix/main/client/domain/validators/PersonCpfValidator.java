@@ -1,4 +1,4 @@
-package com.pix.main.domain.validators;
+package com.pix.main.client.domain.validators;
 
 public class PersonCpfValidator {
 

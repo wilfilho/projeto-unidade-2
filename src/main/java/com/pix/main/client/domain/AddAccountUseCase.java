@@ -1,12 +1,12 @@
-package com.pix.main.domain;
+package com.pix.main.client.domain;
 
-import com.pix.main.domain.errors.AccountAlreadyExistsException;
+import com.pix.main.client.domain.errors.AccountAlreadyExistsException;
 import com.pix.main.bank.domain.errors.AgencyNotFoundException;
-import com.pix.main.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.generators.RandomNumberGenerator;
-import com.pix.main.domain.models.Account;
-import com.pix.main.domain.models.AccountType;
-import com.pix.main.domain.repositories.AccountRepository;
+import com.pix.main.client.domain.errors.ClientNotFoundException;
+import com.pix.main.core.generators.RandomNumberGenerator;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.client.domain.models.AccountType;
+import com.pix.main.client.domain.repositories.AccountRepository;
 
 import java.io.IOException;
 

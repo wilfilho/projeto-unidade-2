@@ -1,7 +1,7 @@
-package com.pix.main.data.storage;
+package com.pix.main.core.storage;
 
 import com.google.gson.Gson;
-import com.pix.main.domain.models.PixStorage;
+import com.pix.main.client.domain.models.PixStorage;
 
 import java.io.FileWriter;
 import java.io.IOException;

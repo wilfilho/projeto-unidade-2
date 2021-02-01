@@ -1,6 +1,6 @@
-package com.pix.main.data.storage;
+package com.pix.main.core.storage;
 
-import com.pix.main.domain.models.PixStorage;
+import com.pix.main.client.domain.models.PixStorage;
 
 import java.io.IOException;
 

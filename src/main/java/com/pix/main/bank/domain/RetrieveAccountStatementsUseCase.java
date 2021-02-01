@@ -1,10 +1,10 @@
-package com.pix.main.domain;
+package com.pix.main.bank.domain;
 
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.BankClient;
-import com.pix.main.domain.models.BankStatement;
-import com.pix.main.domain.models.BankStatementClientRefined;
-import com.pix.main.domain.models.BankStatementRefined;
+import com.pix.main.client.domain.models.BankClient;
+import com.pix.main.bank.domain.models.BankStatement;
+import com.pix.main.bank.domain.models.BankStatementClientRefined;
+import com.pix.main.bank.domain.models.BankStatementRefined;
 import com.pix.main.client.domain.repositories.BankClientRepository;
 import com.pix.main.bank.domain.repositories.BankStatementRepository;
 

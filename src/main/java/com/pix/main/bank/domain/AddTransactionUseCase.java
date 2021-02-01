@@ -3,10 +3,10 @@ package com.pix.main.bank.domain;
 import com.pix.main.client.domain.errors.InvalidAccountIdException;
 import com.pix.main.bank.domain.errors.InvalidBankIdException;
 import com.pix.main.bank.domain.errors.InvalidValueToAddIntoUserCashException;
-import com.pix.main.domain.models.Account;
-import com.pix.main.domain.models.BankStatement;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.bank.domain.models.BankStatement;
 import com.pix.main.client.domain.repositories.AccountRepository;
-import com.pix.main.domain.repositories.BankStatementRepository;
+import com.pix.main.bank.domain.repositories.BankStatementRepository;
 
 import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;

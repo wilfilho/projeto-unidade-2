@@ -1,8 +1,8 @@
-package com.pix.main.domain.repositories;
+package com.pix.main.bank.domain.repositories;
 
 import com.pix.main.bank.domain.errors.AgencyAlreadyExistsException;
 import com.pix.main.bank.domain.errors.BankNotFoundException;
-import com.pix.main.domain.models.Agency;
+import com.pix.main.bank.domain.models.Agency;
 
 import java.io.IOException;
 import java.math.BigDecimal;

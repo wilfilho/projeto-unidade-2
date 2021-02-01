@@ -1,4 +1,4 @@
-package com.pix.main.domain.models;
+package com.pix.main.bank.domain.models;
 
 import java.math.BigDecimal;
 

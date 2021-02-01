@@ -1,10 +1,10 @@
-package com.pix.main.presentation.screens.addAccount;
+package com.pix.main.client.presentation.addAccount;
 
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.errors.AccountAlreadyExistsException;
 import com.pix.main.bank.domain.errors.AgencyNotFoundException;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.AccountType;
+import com.pix.main.client.domain.models.AccountType;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

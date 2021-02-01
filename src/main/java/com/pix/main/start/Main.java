@@ -1,4 +1,4 @@
-package com.pix.main.presentation;
+package com.pix.main.start;
 
 import com.google.gson.Gson;
 import com.pix.main.bank.domain.AddAgencyUseCase;
@@ -18,7 +18,7 @@ import com.pix.main.bank.domain.repositories.AgencyRepository;
 import com.pix.main.client.domain.repositories.BankClientRepository;
 import com.pix.main.bank.domain.repositories.BankRepository;
 import com.pix.main.client.domain.validators.PersonCpfValidator;
-import com.pix.main.presentation.screens.start.StartScreen;
+import com.pix.main.start.screens.start.StartScreen;
 
 import java.awt.*;
 

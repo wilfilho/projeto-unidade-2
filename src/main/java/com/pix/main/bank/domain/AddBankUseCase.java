@@ -2,8 +2,8 @@ package com.pix.main.bank.domain;
 
 import com.pix.main.bank.domain.errors.BankAlreadyExistsException;
 import com.pix.main.bank.domain.errors.InvalidBankIdException;
-import com.pix.main.domain.models.Bank;
-import com.pix.main.domain.repositories.BankRepository;
+import com.pix.main.bank.domain.models.Bank;
+import com.pix.main.bank.domain.repositories.BankRepository;
 
 import java.io.IOException;
 

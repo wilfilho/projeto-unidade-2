@@ -2,8 +2,8 @@ package com.pix.main.bank.domain;
 
 import com.pix.main.bank.domain.errors.AgencyAlreadyExistsException;
 import com.pix.main.bank.domain.errors.BankNotFoundException;
-import com.pix.main.domain.models.Agency;
-import com.pix.main.domain.repositories.AgencyRepository;
+import com.pix.main.bank.domain.models.Agency;
+import com.pix.main.bank.domain.repositories.AgencyRepository;
 
 import java.io.IOException;
 

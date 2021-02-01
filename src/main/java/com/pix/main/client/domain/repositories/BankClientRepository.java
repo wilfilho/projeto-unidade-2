@@ -1,9 +1,9 @@
-package com.pix.main.domain.repositories;
+package com.pix.main.client.domain.repositories;
 
 import com.pix.main.client.domain.errors.ClientAlreadyExistsException;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.domain.models.Account;
-import com.pix.main.domain.models.BankClient;
+import com.pix.main.client.domain.models.Account;
+import com.pix.main.client.domain.models.BankClient;
 
 import java.io.IOException;
 import java.util.List;
