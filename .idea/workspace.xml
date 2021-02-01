@@ -23,16 +23,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82696a19-f1cb-4b3b-9e38-c89ad37a1aef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/RetrieveUserAccountsUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/addAccount/AddAccountScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/BankClientRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/BankClientRepositoryImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/AccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/AccountType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/RepositoriesManualTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/RepositoriesManualTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/UseCasesManualTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/UseCasesManualTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AccountRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/data/AccountRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/AgencyRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/data/AgencyRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/BankClientRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/data/BankClientRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/BankRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/data/BankRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/BankStatementRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/data/BankStatementRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/repositories/PixKeyRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/data/PixKeyRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/storage/JsonPixStorageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/core/storage/JsonPixStorageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/data/storage/PixStorageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/core/storage/PixStorageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddAccountCashUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/AddAccountCashUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddAccountUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/AddAccountUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddAgencyUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/AddAgencyUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddBankUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/AddBankUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddClientUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/AddClientUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddPixKeyUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/AddPixKeyUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/AddTransactionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/AddTransactionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/RetrieveAccountStatementsUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/RetrieveAccountStatementsUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/RetrieveBankCashByAccountUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/RetrieveBankCashByAccountUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/RetrieveCompanyCashUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/RetrieveCompanyCashUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/RetrieveUserAccountsUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/RetrieveUserAccountsUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/AccountAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/AccountAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/AccountBalanceNotUpdatedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/AccountBalanceNotUpdatedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/AgencyAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/errors/AgencyAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/AgencyNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/errors/AgencyNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/BankAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/errors/BankAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/BankNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/errors/BankNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/ClientAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/ClientAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/ClientNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/ClientNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/InvalidAccountIdException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/InvalidAccountIdException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/InvalidBankIdException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/errors/InvalidBankIdException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/InvalidEmailException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/InvalidEmailException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/InvalidPersonCpfException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/InvalidPersonCpfException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/InvalidPersonNameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/InvalidPersonNameException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/InvalidPhoneNumberException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/InvalidPhoneNumberException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/InvalidValueToAddIntoUserCashException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/errors/InvalidValueToAddIntoUserCashException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/PixKeyAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/PixKeyAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/errors/PixKeyNotAddedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/errors/PixKeyNotAddedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/generators/RandomAlphaNumericGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/core/generators/RandomAlphaNumericGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/generators/RandomNumberGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/core/generators/RandomNumberGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/AccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/models/AccountType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/models/Agency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/models/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/models/BankClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/models/BankStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankStatementClientRefined.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/models/BankStatementClientRefined.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/BankStatementRefined.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/models/BankStatementRefined.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/models/PixKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/models/PixStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/models/PixStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/repositories/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/AgencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/repositories/AgencyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/repositories/BankClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/repositories/BankRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/BankStatementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/repositories/BankStatementRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/repositories/PixKeyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/repositories/PixKeyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/domain/validators/PersonCpfValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/domain/validators/PersonCpfValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/addAccount/AddAccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/addAccount/AddAccountScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/addAgency/AddAgencyScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/presentation/addAgency/AddAgencyScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/addBank/AddBankScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/presentation/addBank/AddBankScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/addUser/AddUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/addUser/AddUserScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/start/StartScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/start/StartScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/userAccounts/UserAccountsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/userAccounts/UserAccountsScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/example.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/presentation/screens/userAccounts/UserAccountsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/userAccounts/UserAccountsScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +151,7 @@
       <module name="projeto-unidade-2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pix.main.presentation.screens.addBank.*" />
+          <option name="PATTERN" value="com.pix.main.bank.presentation.addBank.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,11 +160,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pix.main.presentation.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.pix.main.start.Main" />
       <module name="projeto-unidade-2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pix.main.presentation.*" />
+          <option name="PATTERN" value="com.pix.main.start.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,7 +190,7 @@
       <module name="projeto-unidade-2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pix.main.presentation.*" />
+          <option name="PATTERN" value="com.pix.main.start.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,6 +250,10 @@
     <state x="471" y="-835" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1611943371856" />
     <state x="615" y="193" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1612135687368" />
     <state x="471" y="-849" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611945599613" />
+    <state x="280" y="359" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1612141608020">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="280" y="359" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1440.810@0.23.1440.810" timestamp="1612141608020" />
     <state x="378" y="-780" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1611619690277">
       <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
@@ -212,29 +271,29 @@
       <screen x="-622" y="-1057" width="2560" height="990" />
     </state>
     <state x="421" y="-852" key="#xdebugger.evaluate/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1611700805013" />
-    <state width="1398" height="442" key="GridCell.Tab.0.bottom" timestamp="1612136287851">
+    <state width="1398" height="442" key="GridCell.Tab.0.bottom" timestamp="1612140587246">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.bottom/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940977" />
-    <state width="1398" height="442" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1612136287851" />
+    <state width="1398" height="442" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1612140587246" />
     <state width="2518" height="561" key="GridCell.Tab.0.bottom/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612126134482" />
-    <state width="1398" height="442" key="GridCell.Tab.0.center" timestamp="1612136287850">
+    <state width="1398" height="442" key="GridCell.Tab.0.center" timestamp="1612140587244">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.center/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940976" />
-    <state width="1398" height="442" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1612136287850" />
+    <state width="1398" height="442" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1612140587244" />
     <state width="2518" height="561" key="GridCell.Tab.0.center/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612126134482" />
-    <state width="1398" height="442" key="GridCell.Tab.0.left" timestamp="1612136287849">
+    <state width="1398" height="442" key="GridCell.Tab.0.left" timestamp="1612140587243">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.left/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940975" />
-    <state width="1398" height="442" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1612136287849" />
+    <state width="1398" height="442" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1612140587243" />
     <state width="2518" height="561" key="GridCell.Tab.0.left/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612126134473" />
-    <state width="1398" height="442" key="GridCell.Tab.0.right" timestamp="1612136287850">
+    <state width="1398" height="442" key="GridCell.Tab.0.right" timestamp="1612140587245">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.right/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940976" />
-    <state width="1398" height="442" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1612136287850" />
+    <state width="1398" height="442" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1612140587245" />
     <state width="2518" height="561" key="GridCell.Tab.0.right/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612126134482" />
     <state width="2518" height="315" key="GridCell.Tab.1.bottom" timestamp="1611708976437">
       <screen x="-622" y="-1057" width="2560" height="1057" />
