@@ -1,8 +1,11 @@
 package com.pix.main.start;
 
 import com.google.gson.Gson;
+import com.pix.main.bank.data.BankStatementRepositoryImplementation;
 import com.pix.main.bank.domain.AddAgencyUseCase;
 import com.pix.main.bank.domain.AddBankUseCase;
+import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
+import com.pix.main.bank.domain.repositories.BankStatementRepository;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.data.AccountRepositoryImplementation;
@@ -31,7 +34,8 @@ public class Main {
                     providesAddClientUseCase(),
                     providesAddAgencyUseCase(),
                     providesRetrieveUserAccountsUseCase(),
-                    providesAddAccountUseCase());
+                    providesAddAccountUseCase(),
+                    providesRetrieveAccountStatements());
             ex.setVisible(true);
         });
     }
@@ -78,6 +82,14 @@ public class Main {
 
     private static AccountRepository providesAccountRepository() {
         return new AccountRepositoryImplementation(providesPixStorageManager());
+    }
+
+    private static RetrieveAccountStatementsUseCase providesRetrieveAccountStatements() {
+        return new RetrieveAccountStatementsUseCase(providesBankStatementRepository(), providesClientRepository());
+    }
+
+    private static BankStatementRepository providesBankStatementRepository() {
+        return new BankStatementRepositoryImplementation(providesPixStorageManager());
     }
 
     private static PixStorageManager providesPixStorageManager() {

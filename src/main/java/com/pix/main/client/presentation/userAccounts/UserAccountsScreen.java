@@ -1,12 +1,15 @@
 package com.pix.main.client.presentation.userAccounts;
 
+import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
 import com.pix.main.client.domain.models.Account;
+import com.pix.main.client.presentation.accountBankStatement.AccountScreen;
 import com.pix.main.start.Main;
 import com.pix.main.client.presentation.addAccount.AddAccountScreen;
 
+import javax.security.auth.login.AccountNotFoundException;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,12 +21,16 @@ public class UserAccountsScreen extends JFrame {
 
     private AddAccountUseCase addAccountUseCase;
 
+    private RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase;
+
     private String clientId;
 
     public UserAccountsScreen(
             String clientId,
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
-            AddAccountUseCase addAccountUseCase) throws IOException, ClientNotFoundException {
+            AddAccountUseCase addAccountUseCase,
+            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase) throws IOException, ClientNotFoundException {
+        this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.retrieveUserAccountsUseCase = retrieveUserAccountsUseCase;
         this.clientId = clientId;
         this.addAccountUseCase = addAccountUseCase;
@@ -63,8 +70,18 @@ public class UserAccountsScreen extends JFrame {
         accountsListView.setVisibleRowCount(-1);
         accountsListView.addListSelectionListener(e -> {
             JList source = (JList)e.getSource();
-            String[] selected = source.getSelectedValue().toString().split("|");
+            String[] selected = source.getSelectedValue().toString().split("\\|");
             String accountId = selected[2].split(" ")[2];
+            String bankId = selected[0].split(" ")[1];
+            try {
+                new AccountScreen(clientId, accountId, bankId, retrieveAccountStatementsUseCase);
+            } catch (AccountNotFoundException accountNotFoundException) {
+                accountNotFoundException.printStackTrace();
+            } catch (ClientNotFoundException clientNotFoundException) {
+                clientNotFoundException.printStackTrace();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         });
 
         JScrollPane listScroller = new JScrollPane(accountsListView);

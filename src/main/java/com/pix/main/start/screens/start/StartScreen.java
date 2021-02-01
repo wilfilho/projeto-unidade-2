@@ -2,6 +2,7 @@ package com.pix.main.start.screens.start;
 
 import com.pix.main.bank.domain.AddAgencyUseCase;
 import com.pix.main.bank.domain.AddBankUseCase;
+import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
@@ -26,6 +27,8 @@ public class StartScreen extends JFrame {
 
     private RetrieveUserAccountsUseCase retrieveUserAccountsUseCase;
 
+    private RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase;
+
     private AddAccountUseCase addAccountUseCase;
 
     public StartScreen(
@@ -33,7 +36,9 @@ public class StartScreen extends JFrame {
             AddClientUseCase addClientUseCase,
             AddAgencyUseCase addAgencyUseCase,
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
-            AddAccountUseCase addAccountUseCase) {
+            AddAccountUseCase addAccountUseCase,
+            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase) {
+        this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
         this.addAgencyUseCase = addAgencyUseCase;
@@ -95,7 +100,8 @@ public class StartScreen extends JFrame {
                 accountsScreen = new UserAccountsScreen(
                         cpfField.getText(),
                         retrieveUserAccountsUseCase,
-                        addAccountUseCase);
+                        addAccountUseCase,
+                        retrieveAccountStatementsUseCase);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             } catch (ClientNotFoundException clientNotFoundException) {
