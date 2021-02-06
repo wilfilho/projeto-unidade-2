@@ -28,7 +28,7 @@ public class AddAccountScreen extends JFrame {
         setTitle("Adicionar Conta");
         setSize(250, 300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultLookAndFeelDecorated(true);
         setVisible(true);
     }
 

@@ -11,11 +11,15 @@ import com.pix.main.client.presentation.addAccount.AddAccountScreen;
 
 import javax.security.auth.login.AccountNotFoundException;
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserAccountsScreen extends JFrame {
+public class UserAccountsScreen extends JFrame implements ListSelectionListener {
 
     private RetrieveUserAccountsUseCase retrieveUserAccountsUseCase;
 
@@ -42,7 +46,6 @@ public class UserAccountsScreen extends JFrame {
         setTitle("Contas do usuário");
         setSize(300, 400);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     private void createMainContent() throws IOException, ClientNotFoundException {
@@ -54,10 +57,12 @@ public class UserAccountsScreen extends JFrame {
         bankMenu.add(addBankMenuItem);
 
         JMenu logoutMenu = new JMenu("Sair");
-        logoutMenu.addActionListener(e -> {
+        JMenuItem goBack = new JMenuItem("Ir pro login");
+        goBack.addActionListener(e -> {
             dispose();
             Main.main(null);
         });
+        logoutMenu.add(goBack);
 
         menuBar.add(bankMenu);
         menuBar.add(logoutMenu);
@@ -68,21 +73,7 @@ public class UserAccountsScreen extends JFrame {
         accountsListView.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         accountsListView.setLayoutOrientation(JList.HORIZONTAL_WRAP);
         accountsListView.setVisibleRowCount(-1);
-        accountsListView.addListSelectionListener(e -> {
-            JList source = (JList)e.getSource();
-            String[] selected = source.getSelectedValue().toString().split("\\|");
-            String accountId = selected[2].split(" ")[2];
-            String bankId = selected[0].split(" ")[1];
-            try {
-                new AccountScreen(clientId, accountId, bankId, retrieveAccountStatementsUseCase);
-            } catch (AccountNotFoundException accountNotFoundException) {
-                accountNotFoundException.printStackTrace();
-            } catch (ClientNotFoundException clientNotFoundException) {
-                clientNotFoundException.printStackTrace();
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
+        accountsListView.addListSelectionListener(this);
 
         JScrollPane listScroller = new JScrollPane(accountsListView);
         setContentPane(listScroller);
@@ -98,5 +89,23 @@ public class UserAccountsScreen extends JFrame {
         }
 
         return accounts.toArray();
+    }
+
+    @Override
+    public void valueChanged(ListSelectionEvent e) {
+        JList source = (JList)e.getSource();
+        String[] selected = source.getSelectedValue().toString().split("\\|");
+        String accountId = selected[2].split(" ")[2];
+        String bankId = selected[0].split(" ")[1];
+        try {
+            AccountScreen screen = new AccountScreen(clientId, accountId, bankId, retrieveAccountStatementsUseCase);
+            screen.setVisible(true);
+        } catch (AccountNotFoundException accountNotFoundException) {
+            accountNotFoundException.printStackTrace();
+        } catch (ClientNotFoundException clientNotFoundException) {
+            clientNotFoundException.printStackTrace();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
 }

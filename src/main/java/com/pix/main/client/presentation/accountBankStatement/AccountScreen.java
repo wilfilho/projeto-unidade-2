@@ -3,7 +3,6 @@ package com.pix.main.client.presentation.accountBankStatement;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.bank.domain.models.BankStatementRefined;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
-import com.pix.main.client.domain.models.Account;
 
 import javax.security.auth.login.AccountNotFoundException;
 import javax.swing.*;
@@ -39,8 +38,6 @@ public class AccountScreen extends JFrame {
         setTitle(String.format("Gerenciando conta: %s", accountId));
         setSize(600, 300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
     }
 
     private void createMainContent() throws AccountNotFoundException, ClientNotFoundException, IOException {

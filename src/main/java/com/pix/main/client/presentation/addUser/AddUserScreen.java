@@ -24,7 +24,6 @@ public class AddUserScreen extends JFrame {
         setTitle("Adicionar usuário");
         setSize(250, 200);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 
