@@ -1,6 +1,7 @@
 package com.pix.main.start.screens.start;
 
 import com.pix.main.bank.domain.*;
+import com.pix.main.bank.presentation.bankCash.BankCashScreen;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
@@ -33,6 +34,8 @@ public class StartScreen extends JFrame {
 
     private final AddAccountCashUseCase mAddAccountCashUseCase;
 
+    private final RetrieveCompanyCashUseCase mRetrieveCompanyCashUseCase;
+
     public StartScreen(
             AddBankUseCase addBankUseCase,
             AddClientUseCase addClientUseCase,
@@ -41,7 +44,8 @@ public class StartScreen extends JFrame {
             AddAccountUseCase addAccountUseCase,
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
             RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
-            AddAccountCashUseCase addAccountCashUseCase) {
+            AddAccountCashUseCase addAccountCashUseCase,
+            RetrieveCompanyCashUseCase retrieveCompanyCashUseCase) {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
@@ -50,6 +54,7 @@ public class StartScreen extends JFrame {
         this.addAccountUseCase = addAccountUseCase;
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         this.mAddAccountCashUseCase = addAccountCashUseCase;
+        this.mRetrieveCompanyCashUseCase = retrieveCompanyCashUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -67,8 +72,11 @@ public class StartScreen extends JFrame {
 
         JMenu bankMenu = new JMenu("Bancos");
         JMenuItem addBankMenuItem = new JMenuItem("Adicionar banco");
+        JMenuItem seeBankCashMenuItem = new JMenuItem("Ver saldo do banco");
+        seeBankCashMenuItem.addActionListener(e -> new BankCashScreen(mRetrieveCompanyCashUseCase));
         addBankMenuItem.addActionListener((event) -> new AddBankScreen(addBankUseCase));
         bankMenu.add(addBankMenuItem);
+        bankMenu.add(seeBankCashMenuItem);
 
         JMenuItem addAgencyMenuItem = new JMenuItem("Adicionar agência");
         addAgencyMenuItem.addActionListener((event) -> new AddAgencyScreen(addAgencyUseCase));
