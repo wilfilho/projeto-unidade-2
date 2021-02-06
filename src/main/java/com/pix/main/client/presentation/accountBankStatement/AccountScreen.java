@@ -1,9 +1,11 @@
 package com.pix.main.client.presentation.accountBankStatement;
 
+import com.pix.main.bank.domain.AddAccountCashUseCase;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.bank.domain.models.BankStatementRefined;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
+import com.pix.main.client.presentation.addUserCash.AddUserCashScreen;
 import com.pix.main.client.presentation.userCash.UserCashScreen;
 
 import javax.security.auth.login.AccountNotFoundException;
@@ -25,18 +27,22 @@ public class AccountScreen extends JFrame {
 
     private final RetrieveBankCashByAccountUseCase mRetrieveBankCashByAccountUseCase;
 
+    private final AddAccountCashUseCase mAddAccountCashUseCase;
+
     public AccountScreen(
             String clientId,
             String accountId,
             String bankId,
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
-            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase
+            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
+            AddAccountCashUseCase addAccountCashUseCase
     ) throws AccountNotFoundException, ClientNotFoundException, IOException {
         this.clientId = clientId;
         this.accountId = accountId;
         this.bankId = bankId;
         this.mRetrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
+        this.mAddAccountCashUseCase = addAccountCashUseCase;
         configureScreen();
         createMainContent();
     }
@@ -52,6 +58,9 @@ public class AccountScreen extends JFrame {
 
         JMenu cashMenu = new JMenu("Saldo");
         JMenuItem addCashMenuItem = new JMenuItem("Adicionar saldo");
+        addCashMenuItem.addActionListener(e -> {
+            new AddUserCashScreen(mAddAccountCashUseCase, accountId, clientId);
+        });
         JMenuItem seeCashMenuItem = new JMenuItem("Ver saldo");
         seeCashMenuItem.addActionListener(e -> {
             try {

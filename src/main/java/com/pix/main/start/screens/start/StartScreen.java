@@ -1,9 +1,6 @@
 package com.pix.main.start.screens.start;
 
-import com.pix.main.bank.domain.AddAgencyUseCase;
-import com.pix.main.bank.domain.AddBankUseCase;
-import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
-import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
+import com.pix.main.bank.domain.*;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
@@ -34,6 +31,8 @@ public class StartScreen extends JFrame {
 
     private final RetrieveBankCashByAccountUseCase mRetrieveBankCashByAccountUseCase;
 
+    private final AddAccountCashUseCase mAddAccountCashUseCase;
+
     public StartScreen(
             AddBankUseCase addBankUseCase,
             AddClientUseCase addClientUseCase,
@@ -41,7 +40,8 @@ public class StartScreen extends JFrame {
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
             AddAccountUseCase addAccountUseCase,
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
-            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase) {
+            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
+            AddAccountCashUseCase addAccountCashUseCase) {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
@@ -49,6 +49,7 @@ public class StartScreen extends JFrame {
         this.retrieveUserAccountsUseCase = retrieveUserAccountsUseCase;
         this.addAccountUseCase = addAccountUseCase;
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
+        this.mAddAccountCashUseCase = addAccountCashUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -107,7 +108,8 @@ public class StartScreen extends JFrame {
                         retrieveUserAccountsUseCase,
                         addAccountUseCase,
                         retrieveAccountStatementsUseCase,
-                        mRetrieveBankCashByAccountUseCase);
+                        mRetrieveBankCashByAccountUseCase,
+                        mAddAccountCashUseCase);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             } catch (ClientNotFoundException clientNotFoundException) {

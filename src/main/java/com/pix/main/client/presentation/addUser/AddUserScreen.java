@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class AddUserScreen extends JFrame {
 
-    private AddClientUseCase addClientUseCase;
+    private final AddClientUseCase addClientUseCase;
 
     public AddUserScreen(AddClientUseCase addClientUseCase) {
         this.addClientUseCase = addClientUseCase;

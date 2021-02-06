@@ -1,5 +1,6 @@
 package com.pix.main.client.presentation.userAccounts;
 
+import com.pix.main.bank.domain.AddAccountCashUseCase;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.client.domain.AddAccountUseCase;
@@ -32,17 +33,21 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
 
     private final RetrieveBankCashByAccountUseCase mRetrieveBankCashByAccountUseCase;
 
+    private final AddAccountCashUseCase mAddAccountCashUseCase;
+
     public UserAccountsScreen(
             String clientId,
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
             AddAccountUseCase addAccountUseCase,
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
-            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase) throws IOException, ClientNotFoundException {
+            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
+            AddAccountCashUseCase addAccountCashUseCase) throws IOException, ClientNotFoundException {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.retrieveUserAccountsUseCase = retrieveUserAccountsUseCase;
         this.clientId = clientId;
         this.addAccountUseCase = addAccountUseCase;
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
+        this.mAddAccountCashUseCase = addAccountCashUseCase;
         configureScreen();
         createMainContent();
     }
@@ -108,7 +113,8 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
                     accountId,
                     bankId,
                     retrieveAccountStatementsUseCase,
-                    mRetrieveBankCashByAccountUseCase);
+                    mRetrieveBankCashByAccountUseCase,
+                    mAddAccountCashUseCase);
             screen.setVisible(true);
         } catch (AccountNotFoundException accountNotFoundException) {
             accountNotFoundException.printStackTrace();
