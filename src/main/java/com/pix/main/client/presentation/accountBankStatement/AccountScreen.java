@@ -1,9 +1,12 @@
 package com.pix.main.client.presentation.accountBankStatement;
 
 import com.pix.main.bank.domain.AddAccountCashUseCase;
+import com.pix.main.bank.domain.AddTransactionUseCase;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.bank.domain.models.BankStatementRefined;
+import com.pix.main.bank.presentation.addExternalTransfer.AddExternalTransferScreen;
+import com.pix.main.bank.presentation.addInternalTransfer.AddInternalTransfer;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
 import com.pix.main.client.presentation.addUserCash.AddUserCashScreen;
 import com.pix.main.client.presentation.userCash.UserCashScreen;
@@ -29,13 +32,16 @@ public class AccountScreen extends JFrame {
 
     private final AddAccountCashUseCase mAddAccountCashUseCase;
 
+    private final AddTransactionUseCase mAddTransactionUseCase;
+
     public AccountScreen(
             String clientId,
             String accountId,
             String bankId,
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
             RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
-            AddAccountCashUseCase addAccountCashUseCase
+            AddAccountCashUseCase addAccountCashUseCase,
+            AddTransactionUseCase addTransactionUseCase
     ) throws AccountNotFoundException, ClientNotFoundException, IOException {
         this.clientId = clientId;
         this.accountId = accountId;
@@ -43,6 +49,7 @@ public class AccountScreen extends JFrame {
         this.mRetrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         this.mAddAccountCashUseCase = addAccountCashUseCase;
+        this.mAddTransactionUseCase = addTransactionUseCase;
         configureScreen();
         createMainContent();
     }
@@ -76,7 +83,11 @@ public class AccountScreen extends JFrame {
 
         JMenu transferMenu = new JMenu("Transferências");
         JMenuItem addTransferMenuItem = new JMenuItem("Fazer transferência interna");
+        addTransferMenuItem.addActionListener(e ->
+                new AddInternalTransfer(mAddTransactionUseCase, accountId, bankId));
         JMenuItem addTransferPixMenuItem = new JMenuItem("Fazer transferência com Pix");
+        addTransferPixMenuItem.addActionListener(e ->
+                new AddExternalTransferScreen(mAddTransactionUseCase, accountId, bankId));
         transferMenu.add(addTransferMenuItem);
         transferMenu.add(addTransferPixMenuItem);
 

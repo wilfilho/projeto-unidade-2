@@ -37,6 +37,8 @@ public class StartScreen extends JFrame {
 
     private final RetrieveCompanyCashUseCase mRetrieveCompanyCashUseCase;
 
+    private final AddTransactionUseCase mAddTransactionUseCase;
+
     public StartScreen(
             AddBankUseCase addBankUseCase,
             AddClientUseCase addClientUseCase,
@@ -46,7 +48,8 @@ public class StartScreen extends JFrame {
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
             RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
             AddAccountCashUseCase addAccountCashUseCase,
-            RetrieveCompanyCashUseCase retrieveCompanyCashUseCase) {
+            RetrieveCompanyCashUseCase retrieveCompanyCashUseCase,
+            AddTransactionUseCase addTransactionUseCase) {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
@@ -56,6 +59,7 @@ public class StartScreen extends JFrame {
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         this.mAddAccountCashUseCase = addAccountCashUseCase;
         this.mRetrieveCompanyCashUseCase = retrieveCompanyCashUseCase;
+        this.mAddTransactionUseCase = addTransactionUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -121,7 +125,8 @@ public class StartScreen extends JFrame {
                         addAccountUseCase,
                         retrieveAccountStatementsUseCase,
                         mRetrieveBankCashByAccountUseCase,
-                        mAddAccountCashUseCase);
+                        mAddAccountCashUseCase,
+                        mAddTransactionUseCase);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             } catch (ClientNotFoundException clientNotFoundException) {

@@ -36,7 +36,8 @@ public class Main {
                     providesRetrieveAccountStatements(),
                     providesRetrieveBankCashByAccountUseCase(),
                     providesAddAccountCashUseCase(),
-                    providesRetrieveCompanyCashUseCase());
+                    providesRetrieveCompanyCashUseCase(),
+                    providesAddTransactionUseCase());
             ex.setVisible(true);
         });
     }
@@ -103,6 +104,10 @@ public class Main {
 
     private static RetrieveCompanyCashUseCase providesRetrieveCompanyCashUseCase() {
         return new RetrieveCompanyCashUseCase(providesBankRepository());
+    }
+
+    private static AddTransactionUseCase providesAddTransactionUseCase() {
+        return new AddTransactionUseCase(providesBankStatementRepository(), providesAccountRepository());
     }
 
     private static PixStorageManager providesPixStorageManager() {
