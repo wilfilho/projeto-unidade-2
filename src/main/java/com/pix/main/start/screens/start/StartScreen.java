@@ -1,6 +1,7 @@
 package com.pix.main.start.screens.start;
 
 import com.pix.main.bank.domain.*;
+import com.pix.main.bank.presentation.agencyCash.AgencyCashScreen;
 import com.pix.main.bank.presentation.bankCash.BankCashScreen;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
@@ -80,7 +81,10 @@ public class StartScreen extends JFrame {
 
         JMenuItem addAgencyMenuItem = new JMenuItem("Adicionar agência");
         addAgencyMenuItem.addActionListener((event) -> new AddAgencyScreen(addAgencyUseCase));
+        JMenuItem agencyCashMenuItem = new JMenuItem("Ver saldo da agência");
+        agencyCashMenuItem.addActionListener(e -> new AgencyCashScreen(mRetrieveBankCashByAccountUseCase));
         bankMenu.add(addAgencyMenuItem);
+        bankMenu.add(agencyCashMenuItem);
 
         JMenu clientMenu = new JMenu("Usuários");
         JMenuItem addClientMenuItem = new JMenuItem("Adicionar usuário");
