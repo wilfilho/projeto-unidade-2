@@ -3,6 +3,7 @@ package com.pix.main.start.screens.start;
 import com.pix.main.bank.domain.AddAgencyUseCase;
 import com.pix.main.bank.domain.AddBankUseCase;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
+import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
@@ -31,19 +32,23 @@ public class StartScreen extends JFrame {
 
     private AddAccountUseCase addAccountUseCase;
 
+    private final RetrieveBankCashByAccountUseCase mRetrieveBankCashByAccountUseCase;
+
     public StartScreen(
             AddBankUseCase addBankUseCase,
             AddClientUseCase addClientUseCase,
             AddAgencyUseCase addAgencyUseCase,
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
             AddAccountUseCase addAccountUseCase,
-            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase) {
+            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
+            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase) {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
         this.addAgencyUseCase = addAgencyUseCase;
         this.retrieveUserAccountsUseCase = retrieveUserAccountsUseCase;
         this.addAccountUseCase = addAccountUseCase;
+        this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -101,7 +106,8 @@ public class StartScreen extends JFrame {
                         cpfField.getText(),
                         retrieveUserAccountsUseCase,
                         addAccountUseCase,
-                        retrieveAccountStatementsUseCase);
+                        retrieveAccountStatementsUseCase,
+                        mRetrieveBankCashByAccountUseCase);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             } catch (ClientNotFoundException clientNotFoundException) {

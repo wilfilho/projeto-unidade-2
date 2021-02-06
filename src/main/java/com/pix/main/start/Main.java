@@ -5,6 +5,7 @@ import com.pix.main.bank.data.BankStatementRepositoryImplementation;
 import com.pix.main.bank.domain.AddAgencyUseCase;
 import com.pix.main.bank.domain.AddBankUseCase;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
+import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.bank.domain.repositories.BankStatementRepository;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
@@ -35,7 +36,8 @@ public class Main {
                     providesAddAgencyUseCase(),
                     providesRetrieveUserAccountsUseCase(),
                     providesAddAccountUseCase(),
-                    providesRetrieveAccountStatements());
+                    providesRetrieveAccountStatements(),
+                    providesRetrieveBankCashByAccountUseCase());
             ex.setVisible(true);
         });
     }
@@ -90,6 +92,10 @@ public class Main {
 
     private static BankStatementRepository providesBankStatementRepository() {
         return new BankStatementRepositoryImplementation(providesPixStorageManager());
+    }
+
+    private static RetrieveBankCashByAccountUseCase providesRetrieveBankCashByAccountUseCase() {
+        return new RetrieveBankCashByAccountUseCase(providesAddAgencyRepository(), providesAccountRepository());
     }
 
     private static PixStorageManager providesPixStorageManager() {

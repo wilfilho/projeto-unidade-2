@@ -1,8 +1,10 @@
 package com.pix.main.client.presentation.accountBankStatement;
 
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
+import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.bank.domain.models.BankStatementRefined;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
+import com.pix.main.client.presentation.userCash.UserCashScreen;
 
 import javax.security.auth.login.AccountNotFoundException;
 import javax.swing.*;
@@ -13,23 +15,28 @@ import java.util.List;
 
 public class AccountScreen extends JFrame {
 
-    private String accountId;
+    private final String accountId;
 
-    private String clientId;
+    private final String clientId;
 
-    private String bankId;
+    private final String bankId;
 
-    private RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase;
+    private final RetrieveAccountStatementsUseCase mRetrieveAccountStatementsUseCase;
+
+    private final RetrieveBankCashByAccountUseCase mRetrieveBankCashByAccountUseCase;
 
     public AccountScreen(
             String clientId,
             String accountId,
             String bankId,
-            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase) throws AccountNotFoundException, ClientNotFoundException, IOException {
+            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
+            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase
+    ) throws AccountNotFoundException, ClientNotFoundException, IOException {
         this.clientId = clientId;
         this.accountId = accountId;
         this.bankId = bankId;
-        this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
+        this.mRetrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
+        this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         configureScreen();
         createMainContent();
     }
@@ -46,6 +53,15 @@ public class AccountScreen extends JFrame {
         JMenu cashMenu = new JMenu("Saldo");
         JMenuItem addCashMenuItem = new JMenuItem("Adicionar saldo");
         JMenuItem seeCashMenuItem = new JMenuItem("Ver saldo");
+        seeCashMenuItem.addActionListener(e -> {
+            try {
+                new UserCashScreen(mRetrieveBankCashByAccountUseCase, accountId, clientId);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            } catch (AccountNotFoundException accountNotFoundException) {
+                accountNotFoundException.printStackTrace();
+            }
+        });
         cashMenu.add(addCashMenuItem);
         cashMenu.add(seeCashMenuItem);
 
@@ -77,7 +93,7 @@ public class AccountScreen extends JFrame {
 
     private Object[] getStatements() throws IOException, ClientNotFoundException, AccountNotFoundException {
         List<BankStatementRefined> statements =
-                retrieveAccountStatementsUseCase.retrieveAllAccountStatements(accountId, bankId);
+                mRetrieveAccountStatementsUseCase.retrieveAllAccountStatements(accountId, bankId);
         ArrayList<String> finalStatements = new ArrayList<>();
 
         for (BankStatementRefined statementRefined : statements) {

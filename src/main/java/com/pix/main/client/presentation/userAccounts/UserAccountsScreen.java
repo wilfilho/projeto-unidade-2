@@ -1,6 +1,7 @@
 package com.pix.main.client.presentation.userAccounts;
 
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
+import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
@@ -29,15 +30,19 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
 
     private String clientId;
 
+    private final RetrieveBankCashByAccountUseCase mRetrieveBankCashByAccountUseCase;
+
     public UserAccountsScreen(
             String clientId,
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
             AddAccountUseCase addAccountUseCase,
-            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase) throws IOException, ClientNotFoundException {
+            RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
+            RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase) throws IOException, ClientNotFoundException {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.retrieveUserAccountsUseCase = retrieveUserAccountsUseCase;
         this.clientId = clientId;
         this.addAccountUseCase = addAccountUseCase;
+        this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         configureScreen();
         createMainContent();
     }
@@ -98,7 +103,12 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
         String accountId = selected[2].split(" ")[2];
         String bankId = selected[0].split(" ")[1];
         try {
-            AccountScreen screen = new AccountScreen(clientId, accountId, bankId, retrieveAccountStatementsUseCase);
+            AccountScreen screen = new AccountScreen(
+                    clientId,
+                    accountId,
+                    bankId,
+                    retrieveAccountStatementsUseCase,
+                    mRetrieveBankCashByAccountUseCase);
             screen.setVisible(true);
         } catch (AccountNotFoundException accountNotFoundException) {
             accountNotFoundException.printStackTrace();
