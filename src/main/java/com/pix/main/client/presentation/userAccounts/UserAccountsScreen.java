@@ -38,6 +38,8 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
 
     private final AddTransactionUseCase mAddTransactionUseCase;
 
+    private JList accountsListView;
+
     public UserAccountsScreen(
             String clientId,
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
@@ -68,7 +70,12 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
 
         JMenu bankMenu = new JMenu("Contas");
         JMenuItem addBankMenuItem = new JMenuItem("Adicionar nova conta");
-        addBankMenuItem.addActionListener((event) -> new AddAccountScreen(addAccountUseCase, clientId));
+        addBankMenuItem.addActionListener((event) -> {
+            AddAccountScreen addAccountScreen = new AddAccountScreen(addAccountUseCase, clientId);
+            addAccountScreen.setOnAccountAdded(() -> {
+                accountsListView.setListData(getClientAccounts());
+            });
+        });
         bankMenu.add(addBankMenuItem);
 
         JMenu logoutMenu = new JMenu("Sair");
@@ -84,7 +91,7 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
 
         setJMenuBar(menuBar);
 
-        JList accountsListView = new JList(getClientAccounts());
+        accountsListView = new JList(getClientAccounts());
         accountsListView.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         accountsListView.setLayoutOrientation(JList.HORIZONTAL_WRAP);
         accountsListView.setVisibleRowCount(-1);

@@ -5,8 +5,8 @@ import com.pix.main.bank.domain.AddTransactionUseCase;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.bank.domain.models.BankStatementRefined;
-import com.pix.main.bank.presentation.addExternalTransfer.AddExternalTransferScreen;
-import com.pix.main.bank.presentation.addInternalTransfer.AddInternalTransfer;
+import com.pix.main.bank.presentation.transfer.addExternalTransfer.AddExternalTransferScreen;
+import com.pix.main.bank.presentation.transfer.addInternalTransfer.AddInternalTransfer;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
 import com.pix.main.client.presentation.addUserCash.AddUserCashScreen;
 import com.pix.main.client.presentation.userCash.UserCashScreen;
@@ -33,6 +33,8 @@ public class AccountScreen extends JFrame {
     private final AddAccountCashUseCase mAddAccountCashUseCase;
 
     private final AddTransactionUseCase mAddTransactionUseCase;
+
+    private JList transactionsListView;
 
     public AccountScreen(
             String clientId,
@@ -83,11 +85,16 @@ public class AccountScreen extends JFrame {
 
         JMenu transferMenu = new JMenu("Transferências");
         JMenuItem addTransferMenuItem = new JMenuItem("Fazer transferência interna");
-        addTransferMenuItem.addActionListener(e ->
-                new AddInternalTransfer(mAddTransactionUseCase, accountId, bankId));
+        addTransferMenuItem.addActionListener(e -> {
+            AddInternalTransfer internalTransfer = new AddInternalTransfer(mAddTransactionUseCase, accountId, bankId);
+            internalTransfer.setOnTransferMade(() -> transactionsListView.setListData(getStatements()));
+        });
         JMenuItem addTransferPixMenuItem = new JMenuItem("Fazer transferência com Pix");
-        addTransferPixMenuItem.addActionListener(e ->
-                new AddExternalTransferScreen(mAddTransactionUseCase, accountId, bankId));
+        addTransferPixMenuItem.addActionListener(e -> {
+            AddExternalTransferScreen addExternalTransferScreen =
+                    new AddExternalTransferScreen(mAddTransactionUseCase, accountId, bankId);
+            addExternalTransferScreen.setOnTransferMade(() -> transactionsListView.setListData(getStatements()));
+        });
         transferMenu.add(addTransferMenuItem);
         transferMenu.add(addTransferPixMenuItem);
 
@@ -102,12 +109,12 @@ public class AccountScreen extends JFrame {
 
         setJMenuBar(menuBar);
 
-        JList accountsListView = new JList(getStatements());
-        accountsListView.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        accountsListView.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-        accountsListView.setVisibleRowCount(-1);
+        transactionsListView = new JList(getStatements());
+        transactionsListView.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        transactionsListView.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+        transactionsListView.setVisibleRowCount(-1);
 
-        JScrollPane listScroller = new JScrollPane(accountsListView);
+        JScrollPane listScroller = new JScrollPane(transactionsListView);
         setContentPane(listScroller);
     }
 
