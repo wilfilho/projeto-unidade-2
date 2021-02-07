@@ -23,7 +23,6 @@ public class AddAgencyScreen extends JFrame {
         setTitle("Adicionar agência");
         setSize(250, 300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 
@@ -64,7 +63,6 @@ public class AddAgencyScreen extends JFrame {
         });
         JButton cancelBtn = new JButton("Cancelar");
         cancelBtn.addActionListener(e -> dispose());
-
 
         panel.add(label, constraints);
         panel.add(bankCodeField, constraints);

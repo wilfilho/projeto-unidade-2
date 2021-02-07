@@ -1,7 +1,7 @@
 package com.pix.main.bank.domain;
 
-import com.pix.main.client.domain.errors.AccountBalanceNotUpdatedException;
 import com.pix.main.bank.domain.errors.InvalidValueToAddIntoUserCashException;
+import com.pix.main.client.domain.errors.AccountBalanceNotUpdatedException;
 import com.pix.main.client.domain.repositories.AccountRepository;
 
 import java.io.IOException;

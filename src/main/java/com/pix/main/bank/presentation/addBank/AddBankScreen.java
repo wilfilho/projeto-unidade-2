@@ -23,7 +23,6 @@ public class AddBankScreen extends JFrame {
         setTitle("Adicionar Banco");
         setSize(250, 200);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 

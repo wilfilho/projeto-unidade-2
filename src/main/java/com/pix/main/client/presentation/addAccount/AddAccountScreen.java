@@ -17,6 +17,8 @@ public class AddAccountScreen extends JFrame {
 
     private String clientId;
 
+    private OnAccountAdded onAccountAdded;
+
     public AddAccountScreen(AddAccountUseCase addAccountUseCase, String clientId) {
         this.addAccountUseCase = addAccountUseCase;
         this.clientId = clientId;
@@ -28,7 +30,7 @@ public class AddAccountScreen extends JFrame {
         setTitle("Adicionar Conta");
         setSize(250, 300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultLookAndFeelDecorated(true);
         setVisible(true);
     }
 
@@ -60,6 +62,7 @@ public class AddAccountScreen extends JFrame {
             try {
                 AccountType selectedItem = AccountType.toAccountType((String) accountTypeComboBox.getSelectedItem());
                 addAccountUseCase.invoke(clientId, bankCodeField.getText(), agencyCodeField.getText(), selectedItem);
+                onAccountAdded.onNewAccount();
                 dispose();
             } catch (AccountAlreadyExistsException accountAlreadyExistsException) {
                 accountAlreadyExistsException.printStackTrace();
@@ -84,6 +87,16 @@ public class AddAccountScreen extends JFrame {
         panel.add(cancelBtn, constraints);
 
         setContentPane(panel);
+    }
+
+    public void setOnAccountAdded(OnAccountAdded accountAddedListener) {
+        this.onAccountAdded = accountAddedListener;
+    }
+
+    public interface OnAccountAdded {
+
+        void onNewAccount() throws IOException, ClientNotFoundException;
+
     }
 
 }

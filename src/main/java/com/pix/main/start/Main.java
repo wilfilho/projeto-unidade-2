@@ -1,8 +1,9 @@
 package com.pix.main.start;
 
 import com.google.gson.Gson;
-import com.pix.main.bank.domain.AddAgencyUseCase;
-import com.pix.main.bank.domain.AddBankUseCase;
+import com.pix.main.bank.data.BankStatementRepositoryImplementation;
+import com.pix.main.bank.domain.*;
+import com.pix.main.bank.domain.repositories.BankStatementRepository;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.data.AccountRepositoryImplementation;
@@ -31,7 +32,12 @@ public class Main {
                     providesAddClientUseCase(),
                     providesAddAgencyUseCase(),
                     providesRetrieveUserAccountsUseCase(),
-                    providesAddAccountUseCase());
+                    providesAddAccountUseCase(),
+                    providesRetrieveAccountStatements(),
+                    providesRetrieveBankCashByAccountUseCase(),
+                    providesAddAccountCashUseCase(),
+                    providesRetrieveCompanyCashUseCase(),
+                    providesAddTransactionUseCase());
             ex.setVisible(true);
         });
     }
@@ -78,6 +84,30 @@ public class Main {
 
     private static AccountRepository providesAccountRepository() {
         return new AccountRepositoryImplementation(providesPixStorageManager());
+    }
+
+    private static RetrieveAccountStatementsUseCase providesRetrieveAccountStatements() {
+        return new RetrieveAccountStatementsUseCase(providesBankStatementRepository(), providesClientRepository());
+    }
+
+    private static BankStatementRepository providesBankStatementRepository() {
+        return new BankStatementRepositoryImplementation(providesPixStorageManager());
+    }
+
+    private static RetrieveBankCashByAccountUseCase providesRetrieveBankCashByAccountUseCase() {
+        return new RetrieveBankCashByAccountUseCase(providesAddAgencyRepository(), providesAccountRepository());
+    }
+
+    private static AddAccountCashUseCase providesAddAccountCashUseCase() {
+        return new AddAccountCashUseCase(providesAccountRepository());
+    }
+
+    private static RetrieveCompanyCashUseCase providesRetrieveCompanyCashUseCase() {
+        return new RetrieveCompanyCashUseCase(providesBankRepository());
+    }
+
+    private static AddTransactionUseCase providesAddTransactionUseCase() {
+        return new AddTransactionUseCase(providesBankStatementRepository(), providesAccountRepository());
     }
 
     private static PixStorageManager providesPixStorageManager() {
