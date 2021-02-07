@@ -16,7 +16,7 @@ public class AddBankUseCase {
     }
 
     public void invoke(String bankId, String bankName) throws IOException, BankAlreadyExistsException, InvalidBankIdException {
-        if (bankId.length() < 3) {
+        if (bankId.length() != 3) {
             throw new InvalidBankIdException();
         }
 
