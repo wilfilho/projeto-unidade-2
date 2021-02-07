@@ -1,4 +1,4 @@
-package com.pix.main.bank.presentation.addExternalTransfer;
+package com.pix.main.bank.presentation.transfer.addExternalTransfer;
 
 import com.pix.main.bank.domain.AddTransactionUseCase;
 import com.pix.main.bank.domain.errors.InvalidBankIdException;
