@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgencyRepositoryImplementation implements AgencyRepository {
+public class AgencyRepositoryImplementation extends AgencyRepository {
 
     private final PixStorageManager storageManager;
 

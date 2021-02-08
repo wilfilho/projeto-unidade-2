@@ -8,7 +8,7 @@ import com.pix.main.bank.domain.repositories.BankRepository;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-public class BankRepositoryTestImplementation implements BankRepository {
+public class BankRepositoryTestImplementation extends BankRepository {
 
     @Override
     public void addBank(Bank bank) throws IOException, BankAlreadyExistsException {

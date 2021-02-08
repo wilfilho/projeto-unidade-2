@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class BankStatementRepositoryImplementation implements BankStatementRepository {
+public class BankStatementRepositoryImplementation extends BankStatementRepository {
 
     private final PixStorageManager storageManager;
 

@@ -7,10 +7,10 @@ import com.pix.main.bank.domain.models.Agency;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-public interface AgencyRepository {
+public abstract class AgencyRepository {
 
-     void addAgency(Agency agency, String bankId) throws IOException, AgencyAlreadyExistsException, BankNotFoundException;
+     public abstract void addAgency(Agency agency, String bankId) throws IOException, AgencyAlreadyExistsException, BankNotFoundException;
 
-     BigDecimal getAgencyTotalCash(String bankId, String agencyId) throws IOException;
+     public abstract BigDecimal getAgencyTotalCash(String bankId, String agencyId) throws IOException;
 
 }
