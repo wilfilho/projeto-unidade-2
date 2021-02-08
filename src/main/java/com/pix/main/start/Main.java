@@ -4,13 +4,17 @@ import com.google.gson.Gson;
 import com.pix.main.bank.data.BankStatementRepositoryImplementation;
 import com.pix.main.bank.domain.*;
 import com.pix.main.bank.domain.repositories.BankStatementRepository;
+import com.pix.main.client.data.PixKeyRepositoryImplementation;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
 import com.pix.main.client.data.AccountRepositoryImplementation;
 import com.pix.main.bank.data.AgencyRepositoryImplementation;
 import com.pix.main.client.data.BankClientRepositoryImplementation;
 import com.pix.main.bank.data.BankRepositoryImplementation;
+import com.pix.main.client.domain.AddPixKeyUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
+import com.pix.main.client.domain.repositories.PixKeyRepository;
+import com.pix.main.core.generators.RandomAlphaNumericGenerator;
 import com.pix.main.core.storage.JsonPixStorageManager;
 import com.pix.main.core.storage.PixStorageManager;
 import com.pix.main.core.generators.RandomNumberGenerator;
@@ -37,7 +41,8 @@ public class Main {
                     providesRetrieveBankCashByAccountUseCase(),
                     providesAddAccountCashUseCase(),
                     providesRetrieveCompanyCashUseCase(),
-                    providesAddTransactionUseCase());
+                    providesAddTransactionUseCase(),
+                    providesAddPixKeyUseCase());
             ex.setVisible(true);
         });
     }
@@ -108,6 +113,15 @@ public class Main {
 
     private static AddTransactionUseCase providesAddTransactionUseCase() {
         return new AddTransactionUseCase(providesBankStatementRepository(), providesAccountRepository());
+    }
+
+    private static AddPixKeyUseCase providesAddPixKeyUseCase() {
+        RandomAlphaNumericGenerator randomAlphaNumericGenerator = new RandomAlphaNumericGenerator();
+        return new AddPixKeyUseCase(providesPixKeyRepository(), randomAlphaNumericGenerator);
+    }
+
+    private static PixKeyRepository providesPixKeyRepository() {
+        return new PixKeyRepositoryImplementation(providesPixStorageManager());
     }
 
     private static PixStorageManager providesPixStorageManager() {

@@ -23,15 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82696a19-f1cb-4b3b-9e38-c89ad37a1aef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/AddBankUseCaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/PersonValidatorCpfTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mocks/BankRepositoryTestImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/addPixKey/AddPixEmailScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/addPixKey/AddPixPhoneScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/addPixKey/AddPixScreenBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/addPixKey/AddRandomPixScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/addPixKey/PixKeyType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto-unidade-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projeto-unidade-2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/AddBankUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/domain/AddBankUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/presentation/transfer/addExternalTransfer/AddExternalTransferScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/presentation/transfer/addExternalTransfer/AddExternalTransferScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/presentation/transfer/addInternalTransfer/AddInternalTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/bank/presentation/transfer/addInternalTransfer/AddInternalTransfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/accountBankStatement/AccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/accountBankStatement/AccountScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/userAccounts/UserAccountsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/client/presentation/userAccounts/UserAccountsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/start/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pix/main/start/screens/start/StartScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pix/main/start/screens/start/StartScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +42,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Kotlin File" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -96,7 +97,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/pix/main/data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AddBankUseCaseTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="AddBankDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pix.main.presentation.screens.addBank.AddBankDialog" />
       <module name="projeto-unidade-2" />
@@ -153,10 +154,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.AddBankUseCaseTest" />
         <item itemvalue="JUnit.PersonValidatorCpfTest" />
         <item itemvalue="JUnit.PersonValidatorCpfTest.testWithInvalidCPF" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.AddBankDialog" />
       </list>
     </recent_temporary>
@@ -185,11 +186,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="615" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1612739884492">
+    <state x="615" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1612742106811">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="471" y="-835" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1611943371856" />
-    <state x="615" y="193" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1612739884492" />
+    <state x="615" y="193" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1612742106811" />
     <state x="471" y="-849" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612197687242" />
     <state x="280" y="359" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1612729415152">
       <screen x="0" y="23" width="1440" height="810" />
@@ -217,33 +218,33 @@
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="453" height="466" key="DebuggerActiveHint/0.23.1440.810@0.23.1440.810" timestamp="1612143165249" />
-    <state width="1398" height="236" key="GridCell.Tab.0.bottom" timestamp="1612740141323">
+    <state width="1398" height="236" key="GridCell.Tab.0.bottom" timestamp="1612743085511">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.bottom/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940977" />
     <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1612227379786" />
-    <state width="1398" height="236" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1612740141323" />
+    <state width="1398" height="236" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1612743085511" />
     <state width="2518" height="303" key="GridCell.Tab.0.bottom/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612632917424" />
-    <state width="1398" height="236" key="GridCell.Tab.0.center" timestamp="1612740141322">
+    <state width="1398" height="236" key="GridCell.Tab.0.center" timestamp="1612743085510">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.center/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940976" />
     <state width="1398" height="237" key="GridCell.Tab.0.center/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1612227379786" />
-    <state width="1398" height="236" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1612740141322" />
+    <state width="1398" height="236" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1612743085510" />
     <state width="2518" height="303" key="GridCell.Tab.0.center/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612632917424" />
-    <state width="1398" height="236" key="GridCell.Tab.0.left" timestamp="1612740141321">
+    <state width="1398" height="236" key="GridCell.Tab.0.left" timestamp="1612743085510">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.left/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940975" />
     <state width="1398" height="237" key="GridCell.Tab.0.left/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1612227379783" />
-    <state width="1398" height="236" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1612740141321" />
+    <state width="1398" height="236" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1612743085510" />
     <state width="2518" height="303" key="GridCell.Tab.0.left/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612632917417" />
-    <state width="1398" height="236" key="GridCell.Tab.0.right" timestamp="1612740141322">
+    <state width="1398" height="236" key="GridCell.Tab.0.right" timestamp="1612743085511">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state width="2518" height="561" key="GridCell.Tab.0.right/0.23.1440.810/-622.-1057.2560.1057@-622.-1057.2560.1057" timestamp="1612122940976" />
     <state width="1398" height="237" key="GridCell.Tab.0.right/0.23.1440.810/-622.-1057.2560.1057@0.23.1440.810" timestamp="1612227379786" />
-    <state width="1398" height="236" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1612740141322" />
+    <state width="1398" height="236" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1612743085511" />
     <state width="2518" height="303" key="GridCell.Tab.0.right/0.23.1440.877/-622.-1057.2560.990@-622.-1057.2560.990" timestamp="1612632917424" />
     <state width="1398" height="246" key="GridCell.Tab.1.bottom" timestamp="1612145974140">
       <screen x="0" y="23" width="1440" height="810" />

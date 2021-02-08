@@ -5,6 +5,7 @@ import com.pix.main.bank.presentation.agencyCash.AgencyCashScreen;
 import com.pix.main.bank.presentation.bankCash.BankCashScreen;
 import com.pix.main.client.domain.AddAccountUseCase;
 import com.pix.main.client.domain.AddClientUseCase;
+import com.pix.main.client.domain.AddPixKeyUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
 import com.pix.main.bank.presentation.addAgency.AddAgencyScreen;
@@ -39,6 +40,8 @@ public class StartScreen extends JFrame {
 
     private final AddTransactionUseCase mAddTransactionUseCase;
 
+    private final AddPixKeyUseCase mAddPixKeyUseCase;
+
     public StartScreen(
             AddBankUseCase addBankUseCase,
             AddClientUseCase addClientUseCase,
@@ -49,7 +52,8 @@ public class StartScreen extends JFrame {
             RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
             AddAccountCashUseCase addAccountCashUseCase,
             RetrieveCompanyCashUseCase retrieveCompanyCashUseCase,
-            AddTransactionUseCase addTransactionUseCase) {
+            AddTransactionUseCase addTransactionUseCase,
+            AddPixKeyUseCase addPixKeyUseCase) {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.addBankUseCase = addBankUseCase;
         this.addClientUseCase = addClientUseCase;
@@ -60,6 +64,7 @@ public class StartScreen extends JFrame {
         this.mAddAccountCashUseCase = addAccountCashUseCase;
         this.mRetrieveCompanyCashUseCase = retrieveCompanyCashUseCase;
         this.mAddTransactionUseCase = addTransactionUseCase;
+        this.mAddPixKeyUseCase = addPixKeyUseCase;
         configureScreen();
         createMenuBar();
         configureMainContent();
@@ -126,7 +131,8 @@ public class StartScreen extends JFrame {
                         retrieveAccountStatementsUseCase,
                         mRetrieveBankCashByAccountUseCase,
                         mAddAccountCashUseCase,
-                        mAddTransactionUseCase);
+                        mAddTransactionUseCase,
+                        mAddPixKeyUseCase);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             } catch (ClientNotFoundException clientNotFoundException) {
