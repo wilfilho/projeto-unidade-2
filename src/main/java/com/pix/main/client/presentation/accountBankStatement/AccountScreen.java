@@ -7,7 +7,11 @@ import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.bank.domain.models.BankStatementRefined;
 import com.pix.main.bank.presentation.transfer.addExternalTransfer.AddExternalTransferScreen;
 import com.pix.main.bank.presentation.transfer.addInternalTransfer.AddInternalTransfer;
+import com.pix.main.client.domain.AddPixKeyUseCase;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
+import com.pix.main.client.presentation.addPixKey.AddPixEmailScreen;
+import com.pix.main.client.presentation.addPixKey.AddPixPhoneScreen;
+import com.pix.main.client.presentation.addPixKey.AddRandomPixScreen;
 import com.pix.main.client.presentation.addUserCash.AddUserCashScreen;
 import com.pix.main.client.presentation.userCash.UserCashScreen;
 
@@ -36,6 +40,8 @@ public class AccountScreen extends JFrame {
 
     private JList transactionsListView;
 
+    private final AddPixKeyUseCase mAddPixKeyUseCase;
+
     public AccountScreen(
             String clientId,
             String accountId,
@@ -43,7 +49,8 @@ public class AccountScreen extends JFrame {
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
             RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
             AddAccountCashUseCase addAccountCashUseCase,
-            AddTransactionUseCase addTransactionUseCase
+            AddTransactionUseCase addTransactionUseCase,
+            AddPixKeyUseCase addPixKeyUseCase
     ) throws AccountNotFoundException, ClientNotFoundException, IOException {
         this.clientId = clientId;
         this.accountId = accountId;
@@ -52,6 +59,7 @@ public class AccountScreen extends JFrame {
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         this.mAddAccountCashUseCase = addAccountCashUseCase;
         this.mAddTransactionUseCase = addTransactionUseCase;
+        this.mAddPixKeyUseCase = addPixKeyUseCase;
         configureScreen();
         createMainContent();
     }
@@ -98,6 +106,17 @@ public class AccountScreen extends JFrame {
         transferMenu.add(addTransferMenuItem);
         transferMenu.add(addTransferPixMenuItem);
 
+        JMenu pixMenu = new JMenu("Chaves Pix");
+        JMenuItem pixEmailMenuItem = new JMenuItem("Adicionar chave email");
+        pixEmailMenuItem.addActionListener(e -> new AddPixEmailScreen(clientId, accountId, mAddPixKeyUseCase));
+        JMenuItem pixPhoneMenuItem = new JMenuItem("Adicionar chave telefone");
+        pixPhoneMenuItem.addActionListener(e -> new AddPixPhoneScreen(clientId, accountId, mAddPixKeyUseCase));
+        JMenuItem pixRandomMenuItem = new JMenuItem("Adicionar chave aleatória");
+        pixRandomMenuItem.addActionListener(e -> new AddRandomPixScreen(clientId, accountId, mAddPixKeyUseCase));
+        pixMenu.add(pixEmailMenuItem);
+        pixMenu.add(pixPhoneMenuItem);
+        pixMenu.add(pixRandomMenuItem);
+
         JMenu goBackMenu = new JMenu("Sair");
         JMenuItem backScreenMenuItem = new JMenuItem("Voltar");
         backScreenMenuItem.addActionListener(e -> dispose());
@@ -106,6 +125,7 @@ public class AccountScreen extends JFrame {
         menuBar.add(cashMenu);
         menuBar.add(transferMenu);
         menuBar.add(goBackMenu);
+        menuBar.add(pixMenu);
 
         setJMenuBar(menuBar);
 

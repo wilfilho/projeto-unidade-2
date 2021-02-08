@@ -5,6 +5,7 @@ import com.pix.main.bank.domain.AddTransactionUseCase;
 import com.pix.main.bank.domain.RetrieveAccountStatementsUseCase;
 import com.pix.main.bank.domain.RetrieveBankCashByAccountUseCase;
 import com.pix.main.client.domain.AddAccountUseCase;
+import com.pix.main.client.domain.AddPixKeyUseCase;
 import com.pix.main.client.domain.RetrieveUserAccountsUseCase;
 import com.pix.main.client.domain.errors.ClientNotFoundException;
 import com.pix.main.client.domain.models.Account;
@@ -40,6 +41,8 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
 
     private JList accountsListView;
 
+    private final AddPixKeyUseCase mAddPixKeyUseCase;
+
     public UserAccountsScreen(
             String clientId,
             RetrieveUserAccountsUseCase retrieveUserAccountsUseCase,
@@ -47,7 +50,8 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
             RetrieveAccountStatementsUseCase retrieveAccountStatementsUseCase,
             RetrieveBankCashByAccountUseCase retrieveBankCashByAccountUseCase,
             AddAccountCashUseCase addAccountCashUseCase,
-            AddTransactionUseCase addTransactionUseCase) throws IOException, ClientNotFoundException {
+            AddTransactionUseCase addTransactionUseCase,
+            AddPixKeyUseCase addPixKeyUseCase) throws IOException, ClientNotFoundException {
         this.retrieveAccountStatementsUseCase = retrieveAccountStatementsUseCase;
         this.retrieveUserAccountsUseCase = retrieveUserAccountsUseCase;
         this.clientId = clientId;
@@ -55,6 +59,7 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
         this.mRetrieveBankCashByAccountUseCase = retrieveBankCashByAccountUseCase;
         this.mAddAccountCashUseCase = addAccountCashUseCase;
         this.mAddTransactionUseCase = addTransactionUseCase;
+        this.mAddPixKeyUseCase = addPixKeyUseCase;
         configureScreen();
         createMainContent();
     }
@@ -127,7 +132,8 @@ public class UserAccountsScreen extends JFrame implements ListSelectionListener 
                     retrieveAccountStatementsUseCase,
                     mRetrieveBankCashByAccountUseCase,
                     mAddAccountCashUseCase,
-                    mAddTransactionUseCase);
+                    mAddTransactionUseCase,
+                    mAddPixKeyUseCase);
             screen.setVisible(true);
         } catch (AccountNotFoundException accountNotFoundException) {
             accountNotFoundException.printStackTrace();

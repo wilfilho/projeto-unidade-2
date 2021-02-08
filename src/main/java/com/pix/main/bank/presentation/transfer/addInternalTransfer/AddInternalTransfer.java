@@ -5,6 +5,7 @@ import com.pix.main.bank.domain.errors.InvalidBankIdException;
 import com.pix.main.bank.domain.errors.InvalidValueToAddIntoUserCashException;
 import com.pix.main.bank.domain.models.BankStatement;
 import com.pix.main.bank.presentation.transfer.OnTransferMade;
+import com.pix.main.client.domain.errors.ClientNotFoundException;
 import com.pix.main.client.domain.errors.InvalidAccountIdException;
 
 import javax.security.auth.login.AccountNotFoundException;
@@ -79,6 +80,8 @@ public class AddInternalTransfer extends JFrame {
                 invalidValueToAddIntoUserCashException.printStackTrace();
             } catch (AccountNotFoundException accountNotFoundException) {
                 accountNotFoundException.printStackTrace();
+            } catch (ClientNotFoundException clientNotFoundException) {
+                clientNotFoundException.printStackTrace();
             }
         });
         JButton cancelBtn = new JButton("Cancelar");
